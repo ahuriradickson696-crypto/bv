@@ -1,6 +1,5 @@
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 
 export function Accessibility() {
@@ -8,7 +7,7 @@ export function Accessibility() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('home')}         images={pageImages.about}
+        images={pageImages.about}
         eyebrow="Inclusion"
         title={<>Accessibility <em>Statement</em></>}
         subtitle="AVIU aims to make this website usable by as many people as possible."

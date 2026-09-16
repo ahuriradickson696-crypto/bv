@@ -1,6 +1,5 @@
 import { ArrowRight, MapPin, ParkingCircle, Bus } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -11,7 +10,7 @@ export function Campus() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('about')}         images={pageImages.about}
+        images={pageImages.about}
         eyebrow="About"
         title={<>Campus &amp; <em>Visitor Info</em></>}
         subtitle="Our main campus is located in Kampala, Uganda. Find directions, parking information, and transit options to help you plan your visit."
@@ -67,7 +66,7 @@ videos={videosFor('about')}         images={pageImages.about}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.about} overlay={0.88}  videos={videosFor('about')} />
+        <BackgroundCarousel images={pageImages.about} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Visit us</div>
           <h2>Plan your campus visit.</h2>

@@ -1,7 +1,6 @@
 import { ArrowRight, Clock, Globe2, MapPin, Award, BookOpen, Briefcase } from 'lucide-react';
 import { getProgrammeBySlug, faculties, universityInfo } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -51,7 +50,7 @@ export function ProgrammeDetail() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow={faculty?.name || 'Programme'}
         title={<>{programme.name}</>}
         subtitle={programme.description}
@@ -85,7 +84,7 @@ videos={videosFor('study')}         images={pageImages.study}
             <div style={{ marginTop: 28, fontSize: 14, color: 'var(--ink-muted)' }}>
               <p>
                 <Award size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /> NCHE
-                accredited programme
+                accredited: {programme.lastAccreditation} · Due for review: {programme.dueForReview}
               </p>
               <p>
                 <MapPin size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />{' '}
@@ -230,7 +229,7 @@ videos={videosFor('study')}         images={pageImages.study}
       )}
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Next step

@@ -6,7 +6,7 @@ const titles: Record<string, string> = {
   '/study': 'Study Programmes | AVIU',
   '/study/undergraduate': 'Undergraduate Study | AVIU',
   '/study/postgraduate': 'Postgraduate Study | AVIU',
-  '/study/online': 'Online Learning | AVIU',
+  '/study/online': 'Online & E-Learning | AVIU',
   '/study/international': 'International Study | AVIU',
   '/study/course-finder': 'Course Finder — 25 NCHE Programmes | AVIU',
   '/admissions': 'Admissions | AVIU',

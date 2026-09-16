@@ -6,14 +6,14 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { useApply } from '@/components/ApplyContext';
 
 const announcements = [
-  { text: 'Applications open — January, May, August & September intakes', image: '/images/admission-poster.jpeg' },
-  { text: 'Graduation Day: 25 September every year — all faculties', image: '/images/graduation-ceremony.jpg' },
-  { text: '25 NCHE-accredited bachelor programmes · Nabweru, Wakiso', image: '/images/campus-building.jpg' },
-  { text: 'International students welcome — visa guidance available', image: '/images/campus-aviu-students-1.jpg' },
-  { text: 'Nursing & health pathways — contact Admissions for current intake', image: '/images/medical-facility-tour.jpg' },
-  { text: 'Education programmes for future teachers — school practice included', image: '/images/classroom-students.jpg' },
-  { text: 'Visit campus: Nabweru, Wakiso · +256 700 670 691', image: '/images/university-gate.jpg' },
-  { text: 'Campus life & student community at AVIU', image: '/images/campus-aviu-event-1.jpg' },
+  'Applications open — January, May, August & September intakes',
+  'Graduation Day: 25 September every year — all faculties',
+  '25 NCHE-accredited bachelor programmes · Nabweru, Wakiso',
+  'International students welcome — visa guidance available',
+  'Nursing & midwifery pathways — contact Admissions for current intake',
+  'Education programmes for future teachers — school practice included',
+  'Visit campus: Nabweru, Wakiso · +256 700 670 691',
+  'Follow AVIU on X @AvanceIU_uganda · TikTok @avance_iu_uganda',
 ];
 
 type NavGroup = {
@@ -139,23 +139,17 @@ export function Header() {
 
   return (
     <>
-      <div
-        className="announcement announcement-full"
-        key={announcementIndex}
-        style={{
-          backgroundImage: `linear-gradient(90deg, rgba(20,9,42,0.88) 0%, rgba(45,20,84,0.75) 45%, rgba(20,9,42,0.85) 100%), url(${announcements[announcementIndex].image})`,
-        }}
-      >
+      <div className="announcement">
+        <span className="announcement-dot" />
         <span className="announcement-date">{currentDate}</span>
-        <span className="announcement-text announcement-text-strong">{announcements[announcementIndex].text}</span>
-        <div className="announcement-actions">
-          {!isHome && (
-            <button type="button" className="announcement-home-btn" onClick={goHome} aria-label="Go to home page">
-              Home
-            </button>
-          )}
-          <button type="button" className="announcement-apply-btn" onClick={openApply}>Apply now</button>
-        </div>
+        <span className="announcement-divider" />
+        <span className="announcement-text" key={announcementIndex}>{announcements[announcementIndex]}</span>
+        {!isHome && (
+          <button type="button" className="announcement-home-btn" onClick={goHome} aria-label="Go to home page">
+            Home
+          </button>
+        )}
+        <button onClick={openApply}>Apply now</button>
       </div>
       <header
         className="header"
@@ -175,18 +169,7 @@ export function Header() {
             <small>INTERNATIONAL UNIVERSITY</small>
           </span>
         </a>
-        <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
-          <div className="nav-logo-bg" aria-hidden="true">
-            <img src="/images/aviu-logo-full.png" alt="" />
-          </div>
-          <div className="nav-mobile-panel">
-            <div className="nav-mobile-brand">
-              <img src="/images/aviu-logo.png" alt="" width={48} height={48} />
-              <div>
-                <strong>AVANCE</strong>
-                <small>International University</small>
-              </div>
-            </div>
+        <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
           <button type="button" className="nav-home-item" onClick={() => go('/')} style={{ fontWeight: 700, marginRight: 8 }}>Home</button>
           {navGroups.map((group) => (
             <div
@@ -197,20 +180,12 @@ export function Header() {
               }}
             >
               <a
-                href={group.items[0].path}
                 className={isActive(group) ? 'nav-active' : ''}
                 onClick={(e) => {
                   e.preventDefault();
-                  e.stopPropagation();
-                  const isNarrow = window.matchMedia('(max-width: 900px)').matches;
-                  if (group.items.length > 1 && isNarrow) {
+                  if (group.items.length > 1 && window.matchMedia('(max-width: 700px)').matches) {
                     setOpenDropdown(openDropdown === group.label ? null : group.label);
-                  } else if (group.items.length > 1 && !isNarrow) {
-                    // desktop: navigate to overview (first item)
-                    setMenuOpen(false);
-                    go(group.items[0].path);
                   } else {
-                    setMenuOpen(false);
                     go(group.items[0].path);
                   }
                 }}
@@ -223,13 +198,9 @@ export function Header() {
                   {group.items.map((item) => (
                     <a
                       key={item.path}
-                      href={item.path}
                       className={path === item.path ? 'dropdown-active' : ''}
                       onClick={(e) => {
                         e.preventDefault();
-                        e.stopPropagation();
-                        setMenuOpen(false);
-                        setOpenDropdown(null);
                         go(item.path);
                       }}
                     >
@@ -240,10 +211,18 @@ export function Header() {
               )}
             </div>
           ))}
+          <a
+            className="nav-apply mobile-apply"
+            href="#/elearning"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', marginTop: 8 }}
+          >
+            E-Learning Portal
+          </a>
           <button className="nav-apply mobile-apply" onClick={openApply}>
             Apply to AVIU
           </button>
-          </div>
         </nav>
         <div className="header-actions">
           <button
@@ -254,6 +233,14 @@ export function Header() {
             <Search size={19} />
           </button>
           <ThemeToggle />
+          <a
+            className="nav-apply"
+            href="#/elearning"
+            onClick={(e) => { e.preventDefault(); go('/elearning'); }}
+            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+          >
+            E-Learning
+          </a>
           <button className="nav-apply" onClick={openApply}>
             Apply to AVIU
           </button>

@@ -4,7 +4,6 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
 export function Fees() {
@@ -14,7 +13,7 @@ export function Fees() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('fees')}         images={pageImages.fees}
+        images={pageImages.fees}
         eyebrow="Tuition & costs"
         title={
           <>
@@ -72,7 +71,7 @@ videos={videosFor('fees')}         images={pageImages.fees}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.fees} overlay={0.88}  videos={videosFor('fees')} />
+        <BackgroundCarousel images={pageImages.fees} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> International students

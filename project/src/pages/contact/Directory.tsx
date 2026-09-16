@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Search, ArrowRight, Mail, Phone } from 'lucide-react';
 import { staffMembers, universityInfo } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -32,7 +31,7 @@ export function Directory() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.contact}
+        images={pageImages.contact}
         eyebrow="Contact"
         title={<>Staff &amp; Department <em>Directory</em></>}
         subtitle="Find contact information for faculty, administrative staff, and university departments. Search by name or filter by category."
@@ -100,7 +99,7 @@ videos={videosFor('study')}         images={pageImages.contact}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.contact} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.contact} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Need help?</div>
           <h2>Can't find who you need?</h2>

@@ -1,6 +1,5 @@
 import { ArrowRight, HeartPulse, Brain, Accessibility, Stethoscope } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -18,7 +17,7 @@ export function HealthWellbeing() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('studentlife')}         images={pageImages.studentlife}
+        images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Health &amp; <em>Wellbeing</em></>}
         subtitle="Your physical and mental wellbeing are priorities at AVIU. We provide comprehensive health services, counselling, accessibility support, and wellness programmes to help you thrive."
@@ -82,7 +81,7 @@ videos={videosFor('studentlife')}         images={pageImages.studentlife}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88}  videos={videosFor('studentlife')} />
+        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Support</div>
           <h2>Reach out for support.</h2>

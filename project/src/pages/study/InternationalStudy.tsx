@@ -1,6 +1,5 @@
 import { ArrowRight, Globe2, GraduationCap, FileText, Plane } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -24,7 +23,7 @@ export function InternationalStudy() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow="International"
         title={<>International <em>Study Options</em></>}
         subtitle="AVIU welcomes students from across East Africa and the world. Explore study abroad opportunities, exchange programmes, and pathway courses designed for international applicants."
@@ -109,7 +108,7 @@ videos={videosFor('study')}         images={pageImages.study}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Study abroad</div>
           <h2>Join our international community.</h2>

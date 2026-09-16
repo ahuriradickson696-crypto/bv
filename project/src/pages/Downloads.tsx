@@ -1,7 +1,6 @@
 import { Download, FileText, Image, BookOpen } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
 const resources = [
@@ -43,7 +42,7 @@ export function Downloads() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('home')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Resources"
         title={<>Downloads &amp; <em>Materials</em></>}
         subtitle="Download flyers, posters, and the full NCHE-accredited programmes catalogue (CSV/JSON via Course Finder). Apply online — enquiries go to admissions@aviu.ac.ug."

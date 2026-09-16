@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { ArrowRight, Clock, Search, Download, FileSpreadsheet } from 'lucide-react';
 import { faculties, accreditedProgrammes, programmeSlug } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -47,6 +46,9 @@ export function CourseFinder() {
       'Level',
       'Tier Discipline',
       'Duration',
+      'Last Accreditation',
+      'Due for Review',
+      'Review Year',
       'District',
       'Description',
     ];
@@ -57,6 +59,9 @@ export function CourseFinder() {
         p.level,
         `"${p.tierDiscipline}"`,
         p.duration,
+        p.lastAccreditation,
+        p.dueForReview,
+        p.reviewYear,
         p.district,
         `"${p.description.replace(/"/g, '""')}"`,
       ].join(',')
@@ -86,14 +91,14 @@ export function CourseFinder() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow="Accredited programmes"
         title={
           <>
             Course <em>Finder</em>
           </>
         }
-        subtitle="Search all 25 NCHE-accredited bachelor programmes at Avance International University. Filter by faculty or discipline and download the catalogue (CSV / JSON). Accreditation years are held by the University and NCHE."
+        subtitle="Search all 25 NCHE-accredited bachelor programmes at Avance International University. Filter by faculty or discipline and download the catalogue (CSV / JSON)."
         crumbs={[
           { label: 'Home', path: '/' },
           { label: 'Study', path: '/study' },
@@ -172,7 +177,7 @@ videos={videosFor('study')}         images={pageImages.study}
                       <Clock size={13} /> {p.duration}
                     </span>
                     <span style={{ fontSize: 12, color: 'var(--ink-muted)' }}>
-                      NCHE accredited
+                      Accredited {p.lastAccreditation} · Review {p.reviewYear}
                     </span>
                   </div>
                   <div style={{ display: 'flex', gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
@@ -194,7 +199,7 @@ videos={videosFor('study')}         images={pageImages.study}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> International & local applicants

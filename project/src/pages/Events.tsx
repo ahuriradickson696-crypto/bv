@@ -5,7 +5,6 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { TikTokStrip } from '@/components/TikTokEmbed';
 import { tiktoksByCategory } from '@/data/galleryMedia';
 
@@ -22,7 +21,7 @@ export function Events() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('events')}         images={pageImages.events}
+        images={pageImages.events}
         eyebrow="What's on"
         title={<>Events at <em>Avance</em></>}
         subtitle="From conferences and graduation ceremonies to community outreach and innovation fairs, there is always something happening on campus. Many of our events are open to the public — we would love to see you there."
@@ -149,7 +148,7 @@ videos={videosFor('events')}         images={pageImages.events}
       />
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.events} overlay={0.88}  videos={videosFor('events')} />
+        <BackgroundCarousel images={pageImages.events} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Want to attend?

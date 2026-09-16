@@ -4,7 +4,6 @@ import { PageHero } from '@/components/PageHero';
 import { admissionFAQs } from '@/data/university';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 import { TikTokStrip } from '@/components/TikTokEmbed';
 import { tiktoksByCategory } from '@/data/galleryMedia';
@@ -58,7 +57,7 @@ export function Admissions() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('admissions')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Join AVIU"
         title={<>Begin your <em>application.</em></>}
         subtitle="We welcome students from all backgrounds. Our admissions process is straightforward, transparent, and designed to help you find the right fit. We offer three intakes per year: January, May, and August."
@@ -198,7 +197,7 @@ videos={videosFor('admissions')}         images={pageImages.admissions}
       />
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Take the first step

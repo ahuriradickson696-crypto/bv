@@ -3,7 +3,6 @@ import { libraryResources, stats, libraryHours } from '@/data/university';
 import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 
 export function Library() {
@@ -12,7 +11,7 @@ export function Library() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('library')}         images={pageImages.library}
+        images={pageImages.library}
         eyebrow="Knowledge hub"
         title={<>University <em>Library</em></>}
         subtitle="Our library and information resources provide students and faculty with access to a wealth of digital and physical materials, supporting research and learning across all faculties. The Department of Library and Information Resources is at the heart of our academic community."
@@ -57,7 +56,7 @@ videos={videosFor('library')}         images={pageImages.library}
           </div>
         </div>
         <div className="stats-strip">
-          <BackgroundCarousel images={pageImages.library} overlay={0.9}  videos={videosFor('library')} />
+          <BackgroundCarousel images={pageImages.library} overlay={0.9} />
           {stats.map((stat) => (
             <div className="stat-item" key={stat.label}>
               <stat.icon size={22} strokeWidth={1.5} />

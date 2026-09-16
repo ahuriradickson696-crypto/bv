@@ -1,7 +1,6 @@
 import { Calendar, BookOpen, FileText, Users } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 
 const calendarItems = [
   { period: 'January 2026', title: 'January intake orientation', detail: 'Welcome and orientation for January intake students, including international arrivals.', icon: BookOpen },
@@ -20,7 +19,7 @@ export function AcademicCalendar() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('home')}         images={pageImages.home}
+        images={pageImages.home}
         eyebrow="Academic year"
         title={<>Academic <em>Calendar</em></>}
         subtitle="Key dates for registration, assessments, cultural events, and intakes at Avance International University. Always confirm with the Academic Registrar for official deadlines."

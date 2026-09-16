@@ -1,7 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { staffMembers, universityInfo } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -18,7 +17,7 @@ export function OrgChart() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('about')}         images={pageImages.about}
+        images={pageImages.about}
         eyebrow="About"
         title={<>University <em>Organisation</em></>}
         subtitle="Explore the leadership structure and governance hierarchy of Avance International University. From the Chancellor to faculty deans, see how our institution is organised."
@@ -99,7 +98,7 @@ videos={videosFor('about')}         images={pageImages.about}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.about} overlay={0.88}  videos={videosFor('about')} />
+        <BackgroundCarousel images={pageImages.about} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Our people</div>
           <h2>Meet the full team.</h2>

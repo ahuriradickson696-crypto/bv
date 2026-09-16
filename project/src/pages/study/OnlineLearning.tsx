@@ -1,6 +1,5 @@
 import { ArrowRight, Monitor, BriefcaseBusiness, GraduationCap, Clock } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -31,7 +30,7 @@ export function OnlineLearning() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow="Flexible learning"
         title={<>Online &amp; <em>Continuing Education</em></>}
         subtitle="Study on your schedule with our flexible online, part-time, and continuing education options. Whether you are a working professional, a remote learner, or seeking to upskill, we have a pathway for you."
@@ -41,11 +40,19 @@ videos={videosFor('study')}         images={pageImages.study}
       <section className="section-pad" style={{ paddingBottom: 0 }}>
         <div className="elearn-banner">
           <div>
-            <h3>Flexible online learning</h3>
+            <h3>AVIU E-Learning Portal</h3>
             <p>
               Access live classes, video lessons, assignments, and your student dashboard on any device — including your phone.
             </p>
           </div>
+          <a
+            className="btn-light"
+            href="#/elearning" onClick={(e) => { e.preventDefault(); navigate('/elearning'); }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open E-Learning Portal <ArrowRight size={16} />
+          </a>
         </div>
       </section>
 
@@ -70,7 +77,7 @@ videos={videosFor('study')}         images={pageImages.study}
       <section className="section-pad alt-bg">
         <div className="two-col-layout">
           <div className="col-half">
-            <div className="eyebrow"><span className="eyebrow-line" /> Online learning</div>
+            <div className="eyebrow"><span className="eyebrow-line" /> E-Learning platform</div>
             <h2>Our virtual <em>classroom.</em></h2>
             <p>AVIU's technology-enhanced learning platform brings the classroom to you. With over 3 million video lessons and 2,500+ daily live classes, our e-learning system is designed for engagement, accessibility, and academic rigour.</p>
             <p>Students need a reliable internet connection, a computer or tablet, and a quiet study space. Our IT helpdesk provides onboarding support for all new online learners.</p>
@@ -119,7 +126,7 @@ videos={videosFor('study')}         images={pageImages.study}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Start learning</div>
           <h2>Find your flexible pathway.</h2>

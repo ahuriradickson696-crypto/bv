@@ -1,7 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { staffMembers, universityInfo } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -24,7 +23,7 @@ export function Leadership() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('about')}         images={pageImages.about}
+        images={pageImages.about}
         eyebrow="About"
         title={
           <>
@@ -147,7 +146,7 @@ videos={videosFor('about')}         images={pageImages.about}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.about} overlay={0.88}  videos={videosFor('about')} />
+        <BackgroundCarousel images={pageImages.about} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Our people
