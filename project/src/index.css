@@ -5599,3 +5599,513 @@ textarea {
   display: flex;
   align-items: center;
 }
+
+/* ========== FIX: page content never hidden under hero / video BG ========== */
+.page-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  z-index: 0 !important;
+  min-height: 220px;
+}
+
+.page-hero .bg-carousel {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.page-hero .bg-carousel-overlay,
+.page-hero::after {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.page-hero-inner {
+  position: relative !important;
+  z-index: 3 !important;
+  pointer-events: auto !important;
+}
+
+.page-hero-deco {
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Video iframe must NOT spill outside the hero */
+.bg-video-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+.bg-video-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1.35) !important;
+  pointer-events: none !important;
+}
+
+/* Page body content always above backgrounds */
+.page-content {
+  position: relative !important;
+  z-index: 2 !important;
+  background: var(--bg, #fbf9ff) !important;
+  isolation: isolate;
+}
+
+.page-content > .section-pad,
+.page-content > section {
+  position: relative;
+  z-index: 2;
+  background: inherit;
+}
+
+.page-content > .section-pad.alt-bg,
+.page-content > section.alt-bg {
+  background: var(--bg-alt, #f4ecfa);
+}
+
+#main-content {
+  position: relative;
+  z-index: 2;
+  background: var(--bg, #fbf9ff);
+  min-height: 50vh;
+}
+
+/* Floating player: bottom-left, below header, above content edges */
+.yt-floating {
+  z-index: 8000 !important;
+  left: 0 !important; /* position via transform/style from JS */
+}
+
+/* CTA apply area — cycling all campus photos */
+.premium-cta {
+  position: relative;
+  overflow: hidden;
+}
+.premium-cta-bg-stack {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.premium-cta-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.premium-cta-bg-slide.is-active {
+  opacity: 1;
+}
+.premium-cta-overlay {
+  z-index: 1;
+}
+.premium-cta-inner {
+  z-index: 2;
+}
+
+/* ========== CONTENT ABOVE MEDIA — no hunting under videos ========== */
+.page-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  z-index: 0 !important;
+  /* Compact hero so page body is visible without long scroll */
+  min-height: 0 !important;
+  max-height: none;
+  padding: 36px 24px 32px !important;
+}
+
+.page-hero .bg-carousel,
+.page-hero .bg-video-wrap,
+.page-hero .bg-carousel-overlay,
+.page-hero::after {
+  pointer-events: none !important;
+}
+
+.page-hero-inner {
+  position: relative !important;
+  z-index: 5 !important;
+  max-width: 720px;
+}
+
+/* Solid readable panel for title so text is never lost in video */
+.page-hero-inner {
+  background: rgba(20, 9, 42, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 20px 22px 22px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page-hero h1,
+.page-hero-text,
+.page-hero .eyebrow {
+  position: relative;
+  z-index: 6;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* Page body ALWAYS opaque and above anything from hero */
+.page-content {
+  position: relative !important;
+  z-index: 10 !important;
+  background: #fbf9ff !important;
+  isolation: isolate !important;
+}
+
+.page-content > .page-hero {
+  z-index: 0 !important;
+}
+
+.page-content > section,
+.page-content > .section-pad,
+.page-content > .alt-bg {
+  position: relative !important;
+  z-index: 10 !important;
+  background: #fbf9ff;
+}
+
+.page-content > .alt-bg,
+.page-content > section.alt-bg {
+  background: #f4ecfa !important;
+}
+
+#main-content {
+  position: relative !important;
+  z-index: 10 !important;
+  background: #fbf9ff !important;
+  overflow-x: hidden;
+}
+
+/* ========== MOBILE VERSION ========== */
+@media (max-width: 700px) {
+  .page-hero {
+    padding: 20px 14px 18px !important;
+  }
+
+  .page-hero-inner {
+    padding: 16px 14px !important;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.45rem, 6.5vw, 1.85rem) !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 10px !important;
+  }
+
+  .page-hero-text {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide heavy video on very small screens if needed — keep but softer */
+  .bg-video-iframe {
+    transform: translate(-50%, -50%) scale(1.5) !important;
+    opacity: 0.95;
+  }
+
+  .page-hero .bg-carousel-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(20, 9, 42, 0.82),
+      rgba(45, 20, 84, 0.78)
+    ) !important;
+  }
+
+  .section-pad {
+    padding: 28px 14px !important;
+  }
+
+  .section-heading h2 {
+    font-size: 1.45rem !important;
+  }
+
+  /* Floating YT smaller bottom-left on mobile */
+  .yt-floating {
+    width: min(200px, calc(100vw - 16px)) !important;
+    max-width: calc(100vw - 16px) !important;
+  }
+
+  .yt-floating-player {
+    height: 112px !important;
+  }
+
+  /* Nav must open pages fully */
+  .main-nav.is-open {
+    z-index: 10000 !important;
+  }
+
+  .header {
+    z-index: 10001 !important;
+  }
+
+  /* Home split stacks fully on mobile */
+  .split-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .split-hero-ads {
+    min-height: 280px !important;
+  }
+
+  .split-hero-main-light {
+    padding: 28px 16px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-hero {
+    padding: 16px 10px 14px !important;
+  }
+  .yt-floating {
+    width: min(170px, calc(100vw - 12px)) !important;
+  }
+}
+
+/* When navigating, content starts under sticky header cleanly */
+.page-content {
+  padding-top: 0;
+  scroll-margin-top: 0;
+}
+
+/* ========== SAFE PAGE HERO — content always visible below ========== */
+.page-hero-safe {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 160px;
+  max-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background: #2d1454;
+}
+
+.page-hero-safe-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-hero-safe-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%) scale(1.4);
+  border: 0;
+  pointer-events: none;
+}
+
+.page-hero-safe-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 9, 42, 0.55) 0%,
+    rgba(45, 20, 84, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.page-hero-safe-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 28px clamp(16px, 4vw, 48px) 24px;
+  color: #fff;
+}
+
+.page-hero-safe-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #e0c478;
+}
+
+.page-hero-safe-title {
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  color: #ffffff !important;
+}
+
+.page-hero-safe-title em {
+  color: #e0c478 !important;
+  font-style: italic;
+}
+
+.page-hero-safe-sub {
+  margin: 0;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.page-hero-safe-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 2px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.page-hero-safe-crumbs button {
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.page-hero-safe-crumbs button.is-current {
+  color: #e0c478;
+  font-weight: 700;
+}
+
+.page-hero-safe-crumbs svg {
+  display: inline;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+/* PAGE BODY — solid, always on top, always readable */
+#main-content {
+  position: relative !important;
+  z-index: 20 !important;
+  background: #fbf9ff !important;
+  min-height: 70vh !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.page-content {
+  position: relative !important;
+  z-index: 20 !important;
+  background: #fbf9ff !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #2a1a3e !important;
+}
+
+.page-content .section-pad,
+.page-content section {
+  position: relative !important;
+  z-index: 21 !important;
+  background: #fbf9ff;
+  color: #2a1a3e;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.page-content .alt-bg {
+  background: #f4ecfa !important;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content p,
+.page-content li,
+.page-content strong {
+  color: inherit;
+}
+
+.page-content h2 {
+  color: #2d1454 !important;
+}
+
+.page-content h2 em {
+  color: #7140ad !important;
+}
+
+/* Floating widgets must not cover page reading area */
+.yt-floating {
+  z-index: 50 !important;
+  max-height: 40vh;
+}
+.whatsapp-fab {
+  z-index: 60 !important;
+}
+.pwa-install-bar {
+  z-index: 70 !important;
+}
+
+/* Mobile: even clearer */
+@media (max-width: 700px) {
+  .page-hero-safe {
+    min-height: 140px;
+    max-height: 220px;
+  }
+  .page-hero-safe-content {
+    padding: 20px 14px 18px;
+  }
+  .page-hero-safe-title {
+    font-size: 1.5rem !important;
+  }
+  #main-content,
+  .page-content {
+    padding-bottom: 80px; /* clear floating widgets */
+  }
+}
+
+/* Contained CTA carousels — never escape parent */
+.bg-carousel-contained {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: hidden !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.cta-section,
+.quote-section,
+.section-pad {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure faculty cards etc visible */
+.faculty-card,
+.glass-card,
+.check-list,
+.two-col,
+.two-col-layout {
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+  visibility: visible !important;
+}

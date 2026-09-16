@@ -69,14 +69,17 @@ export function Home() {
   const { openApply } = useApply();
   const [adIndex, setAdIndex] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [ctaPhotoIndex, setCtaPhotoIndex] = useState(0);
   const photos = allGallery.length ? allGallery : AD_SLIDES.map((a) => a.image);
 
   useEffect(() => {
     const a = window.setInterval(() => setAdIndex((i) => (i + 1) % AD_SLIDES.length), 6000);
     const p = window.setInterval(() => setPhotoIndex((i) => (i + 1) % photos.length), 4500);
+    const c = window.setInterval(() => setCtaPhotoIndex((i) => (i + 1) % photos.length), 3500);
     return () => {
       window.clearInterval(a);
       window.clearInterval(p);
+      window.clearInterval(c);
     };
   }, [photos.length]);
 
@@ -406,10 +409,15 @@ export function Home() {
       )}
 
       <section className="cta-section premium-cta">
-        <div
-          className="premium-cta-bg"
-          style={{ backgroundImage: 'url(/images/graduation-ceremony.jpg)' }}
-        />
+        <div className="premium-cta-bg-stack" aria-hidden="true">
+          {photos.map((src, i) => (
+            <div
+              key={'cta-' + src + i}
+              className={`premium-cta-bg-slide ${i === ctaPhotoIndex ? 'is-active' : ''}`}
+              style={{ backgroundImage: `url(${src})` }}
+            />
+          ))}
+        </div>
         <div className="premium-cta-overlay" />
         <div className="premium-cta-inner">
           <div className="eyebrow eyebrow-light">

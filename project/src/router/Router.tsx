@@ -71,13 +71,13 @@ export function RouterProvider({ children }: { children: ReactNode }) {
 
   const navigate = (to: string) => {
     const next = normalizePath(to);
-    if (readLocationPath() === next) {
-      window.scrollTo(0, 0);
-      return;
-    }
     window.history.pushState(null, '', next);
     setPath(next);
-    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      const main = document.getElementById('main-content');
+      if (main) main.scrollIntoView({ block: 'start', behavior: 'auto' });
+    });
   };
 
   return (

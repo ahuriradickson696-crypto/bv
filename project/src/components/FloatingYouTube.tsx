@@ -9,23 +9,18 @@ type Pos = { x: number; y: number };
 const STORAGE_KEY = 'aviu_yt_fab_pos';
 
 function defaultPos(): Pos {
-  if (typeof window === 'undefined') return { x: 12, y: 120 };
+  if (typeof window === 'undefined') return { x: 12, y: 0 };
+  // Always start bottom-left (above safe area / WhatsApp)
+  const h = window.innerHeight || 700;
   const isMobile = window.innerWidth < 700;
-  // Mobile: lower-left, clear of WhatsApp
-  if (isMobile) return { x: 10, y: Math.max(80, window.innerHeight - 260) };
-  return { x: 16, y: Math.max(100, window.innerHeight - 300) };
+  return {
+    x: isMobile ? 8 : 16,
+    y: Math.max(60, h - (isMobile ? 220 : 280)),
+  };
 }
 
 function loadPos(): Pos {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const p = JSON.parse(raw) as Pos;
-      if (typeof p.x === 'number' && typeof p.y === 'number') return p;
-    }
-  } catch {
-    /* ignore */
-  }
+  // Prefer bottom-left every session; still allow drag after load
   return defaultPos();
 }
 

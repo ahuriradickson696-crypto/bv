@@ -11,10 +11,10 @@ export const AVIU_VIDEOS = {
 } as const;
 
 /** Default rotation for general pages */
+/** Graduation/ceremony + campus environment — backgrounds on all pages */
 export const defaultPageVideos = [
-  AVIU_VIDEOS.facilities,
-  AVIU_VIDEOS.mediaUpdate,
-  AVIU_VIDEOS.vcMessage,
+  AVIU_VIDEOS.installation, // ceremony / graduation
+  AVIU_VIDEOS.facilities,   // campus environment
 ];
 
 /** Home hero / ad slides — one video per slide */
@@ -30,22 +30,22 @@ export const homeSlideVideos = [
  * Map route-ish keys to the videos that should play as page backgrounds.
  */
 export const pageVideos: Record<string, string[]> = {
-  home: homeSlideVideos,
-  about: [AVIU_VIDEOS.installation, AVIU_VIDEOS.vcMessage, AVIU_VIDEOS.mediaUpdate],
-  leadership: [AVIU_VIDEOS.installation, AVIU_VIDEOS.vcMessage],
-  study: [AVIU_VIDEOS.faculty, AVIU_VIDEOS.facilities, AVIU_VIDEOS.vcMessage],
-  admissions: [AVIU_VIDEOS.facilities, AVIU_VIDEOS.faculty, AVIU_VIDEOS.mediaUpdate],
-  international: [AVIU_VIDEOS.vcMessage, AVIU_VIDEOS.facilities],
-  studentlife: [AVIU_VIDEOS.facilities, AVIU_VIDEOS.mediaUpdate],
-  events: [AVIU_VIDEOS.installation, AVIU_VIDEOS.mediaUpdate, AVIU_VIDEOS.facilities],
-  news: [AVIU_VIDEOS.mediaUpdate, AVIU_VIDEOS.installation],
-  research: [AVIU_VIDEOS.vcMessage, AVIU_VIDEOS.faculty],
-  staff: [AVIU_VIDEOS.vcMessage, AVIU_VIDEOS.faculty],
-  library: [AVIU_VIDEOS.facilities],
-  gallery: homeSlideVideos,
-  contact: [AVIU_VIDEOS.mediaUpdate, AVIU_VIDEOS.facilities],
-  fees: [AVIU_VIDEOS.facilities],
-  campus: [AVIU_VIDEOS.facilities, AVIU_VIDEOS.mediaUpdate],
+  home: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  about: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  leadership: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  study: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  admissions: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  international: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  studentlife: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  events: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  news: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  research: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  staff: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  library: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  gallery: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  contact: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  fees: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
+  campus: [AVIU_VIDEOS.installation, AVIU_VIDEOS.facilities],
 };
 
 export function videosFor(key: string): string[] {
