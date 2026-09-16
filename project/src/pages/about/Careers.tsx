@@ -1,5 +1,6 @@
 import { ArrowRight, BriefcaseBusiness, Users, Heart } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -28,7 +29,7 @@ export function Careers() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.about}
+videos={videosFor('about')}         images={pageImages.about}
         eyebrow="About"
         title={<>Careers at <em>AVIU</em></>}
         subtitle="Join our community of educators, researchers, and professionals dedicated to enhancing innovations through quality education. AVIU offers a rewarding work environment with opportunities for growth and impact."
@@ -80,7 +81,7 @@ export function Careers() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.about} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.about} overlay={0.88}  videos={videosFor('about')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Careers</div>
           <h2>Join our team.</h2>

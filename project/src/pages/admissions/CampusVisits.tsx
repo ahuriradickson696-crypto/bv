@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, Calendar, Users, Monitor } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -17,7 +18,7 @@ export function CampusVisits() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.admissions}
+videos={videosFor('admissions')}         images={pageImages.admissions}
         eyebrow="Experience campus"
         title={<>Campus <em>Visits</em></>}
         subtitle="The best way to know if AVIU is right for you is to visit. Join an open day, book a guided tour, or explore our campus virtually from anywhere in the world."
@@ -64,7 +65,7 @@ export function CampusVisits() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Visit us</div>
           <h2>Book your campus visit.</h2>

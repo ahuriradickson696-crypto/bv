@@ -1,5 +1,6 @@
 import { ArrowRight, FileText, Upload, CreditCard, CheckCircle2 } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
@@ -19,7 +20,7 @@ export function HowToApply() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.admissions}
+videos={videosFor('admissions')}         images={pageImages.admissions}
         eyebrow="Application guide"
         title={<>How to <em>Apply</em></>}
         subtitle="Follow these five simple steps to submit your application to Avance International University. The entire process can be completed online."

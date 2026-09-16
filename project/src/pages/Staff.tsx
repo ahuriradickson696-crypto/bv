@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PageHero } from '@/components/PageHero';
 import { staffMembers } from '@/data/university';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 
 export function Staff() {
   const [filter, setFilter] = useState<'All' | 'Academic' | 'Administrative'>('All');
@@ -17,7 +18,7 @@ export function Staff() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.staff}
+videos={videosFor('staff')}         images={pageImages.staff}
         eyebrow="Our people"
         title={<>Meet our <em>staff</em></>}
         subtitle="Our dedicated team of academic and administrative professionals is committed to delivering quality education and supporting every student's journey at Avance International University. With over 100 faculty members across four faculties, we bring together expertise from leading institutions."

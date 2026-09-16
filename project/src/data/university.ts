@@ -51,12 +51,12 @@ export const faculties: Faculty[] = [
     longDescription:
       'The Faculty of Education delivers research-informed, practice-oriented teacher education. All listed programmes are accredited by the National Council for Higher Education (NCHE). Students benefit from teaching practice placements, curriculum studies, educational psychology, and inclusive pedagogy. Graduates are prepared for primary and secondary classrooms, early childhood centres, and further postgraduate study. International applicants are welcome; English is the medium of instruction.',
     programs: [
-      { name: 'Bachelor of Arts with Education', level: 'Bachelor', duration: '3 Years', description: 'Combines subject specialisation in the arts with professional teacher education. Includes school practice and pedagogy modules. Accredited by NCHE (last review 2025; next 2032).' },
+      { name: 'Bachelor of Arts with Education', level: 'Bachelor', duration: '3 Years', description: 'Combines subject specialisation in the arts with professional teacher education. Includes school practice and pedagogy modules. Accredited by NCHE.' },
       { name: 'Bachelor of Early Childhood Development', level: 'Bachelor', duration: '3 Years', description: 'Focused on the care, development and education of children from birth to eight years. Covers child psychology, play-based learning, and centre management. NCHE accredited.' },
-      { name: 'Bachelor of Education Early Childhood Development', level: 'Bachelor', duration: '3 Years', description: 'Professional qualification for early childhood educators with a strong foundation in curriculum and assessment for young learners. NCHE accredited (review due 2028).' },
-      { name: 'Bachelor of Education-Primary -Arts', level: 'Bachelor', duration: '3 Years', description: 'Prepares primary school teachers with an arts orientation. Teaching practice is compulsory. NCHE accredited (last 2025; next 2032).' },
+      { name: 'Bachelor of Education Early Childhood Development', level: 'Bachelor', duration: '3 Years', description: 'Professional qualification for early childhood educators with a strong foundation in curriculum and assessment for young learners. NCHE accredited.' },
+      { name: 'Bachelor of Education-Primary -Arts', level: 'Bachelor', duration: '3 Years', description: 'Prepares primary school teachers with an arts orientation. Teaching practice is compulsory. NCHE accredited.' },
       { name: 'Bachelor of Primary Education', level: 'Bachelor', duration: '3 Years', description: 'Core primary teacher education covering literacy, numeracy, science and social studies methods. Suitable for local and international students seeking a recognised teaching qualification.' },
-      { name: 'Bachelor of Science with Education', level: 'Bachelor', duration: '3 Years', description: 'Science subject content combined with professional education studies. Ideal for secondary science teaching pathways. NCHE accredited (2026; next review 2033).' },
+      { name: 'Bachelor of Science with Education', level: 'Bachelor', duration: '3 Years', description: 'Science subject content combined with professional education studies. Ideal for secondary science teaching pathways. NCHE accredited.' },
     ],
     level: 'Undergraduate',
   },
@@ -70,10 +70,10 @@ export const faculties: Faculty[] = [
     longDescription:
       'The Faculty of Business Administration offers NCHE-accredited bachelor degrees that blend theory with practical case work, industrial attachment and entrepreneurial projects. Programmes are designed for both Ugandan and international students. Assessment includes coursework, examinations and workplace experience. Graduates enter banking, SMEs, public administration support roles, hospitality and agribusiness value chains across East Africa.',
     programs: [
-      { name: 'Bachelor of Accounting and Finance', level: 'Bachelor', duration: '3 Years', description: 'Financial accounting, management accounting, taxation, auditing and corporate finance. Prepares students for professional accounting pathways and finance roles. NCHE accredited (2025–2032).' },
+      { name: 'Bachelor of Accounting and Finance', level: 'Bachelor', duration: '3 Years', description: 'Financial accounting, management accounting, taxation, auditing and corporate finance. Prepares students for professional accounting pathways and finance roles. NCHE accredited.' },
       { name: 'Bachelor of Agribusiness Management', level: 'Bachelor', duration: '3 Years', description: 'Agribusiness value chains, farm management, agricultural marketing and rural enterprise development. Strong focus on practical agribusiness projects. NCHE accredited.' },
-      { name: 'Bachelor of Business Administration', level: 'Bachelor', duration: '3 Years', description: 'Core management, marketing, human resources, operations and entrepreneurship. Widely recognised for entry-level management roles. NCHE accredited (2023–2030).' },
-      { name: 'Bachelor of Business Administration and Management', level: 'Bachelor', duration: '3 Years', description: 'Extended management curriculum with organisational behaviour, strategy and project management. NCHE accredited (2023–2030).' },
+      { name: 'Bachelor of Business Administration', level: 'Bachelor', duration: '3 Years', description: 'Core management, marketing, human resources, operations and entrepreneurship. Widely recognised for entry-level management roles. NCHE accredited.' },
+      { name: 'Bachelor of Business Administration and Management', level: 'Bachelor', duration: '3 Years', description: 'Extended management curriculum with organisational behaviour, strategy and project management. NCHE accredited.' },
       { name: 'Bachelor of Records and Information Management', level: 'Bachelor', duration: '3 Years', description: 'Records systems, archives, information governance and digital records management for public and private organisations. NCHE accredited.' },
       { name: 'Bachelor of Tourism and Hospitality Management', level: 'Bachelor', duration: '3 Years', description: 'Tourism operations, hospitality management, customer service excellence and destination marketing. Includes industrial attachment. NCHE accredited.' },
     ],
@@ -89,9 +89,9 @@ export const faculties: Faculty[] = [
     longDescription:
       'The Faculty of Computing & Information Technology prepares students for software development, systems analysis, networking and digital transformation roles. Laboratories support programming, databases and networking practicals. All programmes listed are NCHE-accredited. International students receive the same curriculum delivered in English, with support for visa and settling-in processes.',
     programs: [
-      { name: 'Bachelor of Information Technology', level: 'Bachelor', duration: '3 Years', description: 'Networks, systems administration, web technologies, databases and IT project management. NCHE accredited (2023–2030).' },
-      { name: 'Bachelor of Science in Computer Science', level: 'Bachelor', duration: '3 Years', description: 'Algorithms, programming, software engineering, operating systems and foundational computer science theory. NCHE accredited (2023–2030).' },
-      { name: 'Bachelor of Science in Information System', level: 'Bachelor', duration: '3 Years', description: 'Information systems analysis and design, business process support, data management and enterprise systems. NCHE accredited (2023–2030).' },
+      { name: 'Bachelor of Information Technology', level: 'Bachelor', duration: '3 Years', description: 'Networks, systems administration, web technologies, databases and IT project management. NCHE accredited.' },
+      { name: 'Bachelor of Science in Computer Science', level: 'Bachelor', duration: '3 Years', description: 'Algorithms, programming, software engineering, operating systems and foundational computer science theory. NCHE accredited.' },
+      { name: 'Bachelor of Science in Information System', level: 'Bachelor', duration: '3 Years', description: 'Information systems analysis and design, business process support, data management and enterprise systems. NCHE accredited.' },
     ],
     level: 'Undergraduate',
   },
@@ -105,8 +105,8 @@ export const faculties: Faculty[] = [
     longDescription:
       'The School of Nursing & Health Sciences focuses on evidence-based nursing education with clinical placements and skills-lab practice. Bachelor of Nursing Science and the Completion pathway are NCHE-accredited. Complementary Medicine is listed subject to relevant professional laws. International applicants must meet English proficiency and any licensing requirements of their home or intended practice country.',
     programs: [
-      { name: 'Bachelor of Nursing Science', level: 'Bachelor', duration: '4 Years', description: 'Comprehensive nursing education with clinical rotations in medical-surgical, maternal, paediatric and community health settings. NCHE accredited (2022; review 2027).' },
-      { name: 'Bachelor of Nursing Sciences -Completion', level: 'Bachelor', duration: '2–3 Years', description: 'Upgrade pathway for qualified nurses seeking a bachelor degree. Builds on prior diploma or certificate credentials. NCHE accredited (2023–2030).' },
+      { name: 'Bachelor of Nursing Science', level: 'Bachelor', duration: '4 Years', description: 'Comprehensive nursing education with clinical rotations in medical-surgical, maternal, paediatric and community health settings. NCHE accredited.' },
+      { name: 'Bachelor of Nursing Sciences -Completion', level: 'Bachelor', duration: '2–3 Years', description: 'Upgrade pathway for qualified nurses seeking a bachelor degree. Builds on prior diploma or certificate credentials. NCHE accredited.' },
       { name: 'Bachelor of Complementary Medicine (Pending Relevant Laws)', level: 'Bachelor', duration: '4 Years', description: 'Integrative and complementary medicine studies. Accreditation status is subject to relevant professional and legal frameworks. Contact admissions for current entry requirements.' },
     ],
     level: 'Undergraduate',
@@ -121,13 +121,13 @@ export const faculties: Faculty[] = [
     longDescription:
       'This faculty offers NCHE-accredited degrees that prepare graduates for social services, public sector roles, creative industries, faith-based leadership and conservation-linked tourism. Teaching emphasises research methods, community engagement and professional ethics. Suitable for international students seeking regionally recognised qualifications delivered in English.',
     programs: [
-      { name: 'Bachelor of Arts and Social Science', level: 'Bachelor', duration: '3 Years', description: 'Interdisciplinary social sciences foundation covering sociology, development studies and research methods. NCHE accredited (2023–2030).' },
+      { name: 'Bachelor of Arts and Social Science', level: 'Bachelor', duration: '3 Years', description: 'Interdisciplinary social sciences foundation covering sociology, development studies and research methods. NCHE accredited.' },
       { name: 'Bachelor of Divinity', level: 'Bachelor', duration: '3 Years', description: 'Theological and pastoral studies for ministry and faith-based organisational leadership. NCHE accredited.' },
-      { name: 'Bachelor of Graphics and Communication Design', level: 'Bachelor', duration: '3 Years', description: 'Visual communication, branding, digital design tools and portfolio development for the creative industries. NCHE accredited (2023–2030).' },
-      { name: 'Bachelor of Public Administration', level: 'Bachelor', duration: '3 Years', description: 'Public sector management, policy analysis, local government and administrative law foundations. NCHE accredited (2025–2032).' },
-      { name: 'Bachelor of Social Work', level: 'Bachelor', duration: '3 Years', description: 'Professional social work practice, case management, community development and ethics. Includes field placements. NCHE accredited (2025–2032).' },
-      { name: 'Bachelor of Social Work and Social Administration', level: 'Bachelor', duration: '3 Years', description: 'Social work combined with social administration and welfare systems. Prepares graduates for NGOs and government social services. NCHE accredited (2025–2032).' },
-      { name: 'Bachelor of Tourism and Conservation Management', level: 'Bachelor', duration: '3 Years', description: 'Sustainable tourism, wildlife and conservation management, and community-based tourism models. NCHE accredited (2025–2032).' },
+      { name: 'Bachelor of Graphics and Communication Design', level: 'Bachelor', duration: '3 Years', description: 'Visual communication, branding, digital design tools and portfolio development for the creative industries. NCHE accredited.' },
+      { name: 'Bachelor of Public Administration', level: 'Bachelor', duration: '3 Years', description: 'Public sector management, policy analysis, local government and administrative law foundations. NCHE accredited.' },
+      { name: 'Bachelor of Social Work', level: 'Bachelor', duration: '3 Years', description: 'Professional social work practice, case management, community development and ethics. Includes field placements. NCHE accredited.' },
+      { name: 'Bachelor of Social Work and Social Administration', level: 'Bachelor', duration: '3 Years', description: 'Social work combined with social administration and welfare systems. Prepares graduates for NGOs and government social services. NCHE accredited.' },
+      { name: 'Bachelor of Tourism and Conservation Management', level: 'Bachelor', duration: '3 Years', description: 'Sustainable tourism, wildlife and conservation management, and community-based tourism models. NCHE accredited.' },
     ],
     level: 'Undergraduate',
   },

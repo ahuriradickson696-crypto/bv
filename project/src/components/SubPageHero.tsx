@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
+import { defaultPageVideos } from '@/data/pageVideos';
 
 type Crumb = { label: string; path: string };
 
@@ -12,6 +13,7 @@ export function SubPageHero({
   crumbs,
   children,
   images,
+  videos,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -19,12 +21,13 @@ export function SubPageHero({
   crumbs: Crumb[];
   children?: ReactNode;
   images?: string[];
+  videos?: string[];
 }) {
   const { navigate } = useRouter();
 
   return (
     <section className="page-hero">
-      <BackgroundCarousel images={images} />
+      <BackgroundCarousel images={images} videos={videos && videos.length ? videos : defaultPageVideos} overlay={0.8} />
       <div className="page-hero-inner">
         <nav className="breadcrumb">
           {crumbs.map((crumb, i) => (

@@ -1,0 +1,33 @@
+{
+  "name": "Avance International University",
+  "short_name": "AVIU",
+  "description": "Avance International University — 25 NCHE-accredited programmes. Apply, explore campus, and stay updated.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#2d1454",
+  "theme_color": "#2d1454",
+  "lang": "en",
+  "categories": ["education", "university"],
+  "icons": [
+    {
+      "src": "/images/aviu-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/aviu-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/aviu-logo-full.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 
 export function Privacy() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.about}
+videos={videosFor('home')}         images={pageImages.about}
         eyebrow="Legal"
         title={<>Privacy <em>Policy</em></>}
         subtitle="How Avance International University collects, uses and protects personal data."

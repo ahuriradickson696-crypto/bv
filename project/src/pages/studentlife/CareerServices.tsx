@@ -1,5 +1,6 @@
 import { ArrowRight, BriefcaseBusiness, FileText, Users, GraduationCap } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -19,7 +20,7 @@ export function CareerServices() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.studentlife}
+videos={videosFor('studentlife')}         images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Career <em>Services</em></>}
         subtitle="From your first year to graduation and beyond, our career services team helps you build the skills, experience, and connections you need to succeed in the workplace."
@@ -79,7 +80,7 @@ export function CareerServices() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88}  videos={videosFor('studentlife')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Your career</div>
           <h2>Plan your future with us.</h2>

@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { researchCentres, researchProjects } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -11,7 +12,7 @@ export function ResearchCentres() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.research}
+videos={videosFor('research')}         images={pageImages.research}
         eyebrow="Research"
         title={<>Research Centres &amp; <em>Institutes</em></>}
         subtitle="Our specialised research centres and institutes bring together faculty, postgraduate students, and industry partners to address real-world challenges across technology, health, education, and business."
@@ -64,7 +65,7 @@ export function ResearchCentres() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.research} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.research} overlay={0.88}  videos={videosFor('research')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Partner with us</div>
           <h2>Collaborate on research.</h2>

@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { ApplyProvider } from '@/components/ApplyContext';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { FloatingYouTube } from '@/components/FloatingYouTube';
+import { PwaInstall } from '@/components/PwaInstall';
 import { DocumentHead } from '@/components/DocumentHead';
 import { NotFound } from '@/pages/NotFound';
 import { Terms } from '@/pages/Terms';
@@ -171,12 +172,13 @@ function Routes() {
   };
 
   return (
-    <div className="site-shell">
+    <div className="site-shell" style={{ maxWidth: "100vw", overflowX: "hidden" }}>
       <DocumentHead />
       <a href="#main-content" className="skip-to-content">Skip to main content</a>
       <Header />
-      <main id="main-content">{renderPage()}</main>
+      <main id="main-content" style={{ minHeight: "50vh" }}>{renderPage()}</main>
       <FloatingYouTube />
+      <PwaInstall />
       <Footer />
       <WhatsAppButton />
       <CookieConsent />

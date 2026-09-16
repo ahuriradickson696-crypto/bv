@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -25,7 +26,7 @@ export function EntryRequirements() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.admissions}
+videos={videosFor('admissions')}         images={pageImages.admissions}
         eyebrow="Admissions"
         title={<>Entry <em>Requirements</em></>}
         subtitle="Find the academic qualifications needed for each programme level. AVIU offers multiple entry pathways to ensure education is accessible to all qualified applicants."
@@ -81,7 +82,7 @@ export function EntryRequirements() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Ready?</div>
           <h2>Check your eligibility.</h2>

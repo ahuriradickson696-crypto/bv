@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Phone, AlertTriangle, PackageSearch } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -24,7 +25,7 @@ export function CampusSafety() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.contact}
+videos={videosFor('study')}         images={pageImages.contact}
         eyebrow="Contact"
         title={<>Campus Safety &amp; <em>Emergency Services</em></>}
         subtitle="The safety and wellbeing of our campus community is our top priority. Find emergency contacts, safety resources, and information about our security services."
@@ -93,7 +94,7 @@ export function CampusSafety() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.contact} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.contact} overlay={0.88}  videos={videosFor('study')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Emergency</div>
           <h2>Need immediate help?</h2>
