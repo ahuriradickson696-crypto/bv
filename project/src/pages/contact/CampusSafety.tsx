@@ -7,7 +7,7 @@ import { pageImages } from '@/data/pageImages';
 const safetyServices = [
   { icon: Shield, title: '24/7 Campus Security', description: 'Our campus security team operates around the clock to ensure a safe environment for all students, staff, and visitors. Security guards patrol the campus and monitor entry points.' },
   { icon: Phone, title: 'Security Hotline', description: 'A dedicated 24/7 security hotline is available for emergencies and safety concerns. All students are encouraged to save this number.' },
-  { icon: AlertTriangle, title: 'Emergency Response', description: 'AVIU has an emergency response protocol covering medical emergencies, fire, security incidents, and natural disasters. Regular drills are conducted each semester.' },
+  { icon: AlertTriangle, title: 'Emergency Response', description: 'AIU has an emergency response protocol covering medical emergencies, fire, security incidents, and natural disasters. Regular drills are conducted each semester.' },
   { icon: PackageSearch, title: 'Lost & Found', description: 'The security office operates a lost and found service at the main gate. Lost items can be reported and collected during office hours.' },
 ];
 

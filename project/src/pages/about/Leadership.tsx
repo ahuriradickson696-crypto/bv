@@ -16,7 +16,7 @@ export function Leadership() {
         images={pageImages.about}
         eyebrow="About"
         title={<>Leadership &amp; <em>Governance</em></>}
-        subtitle="AVIU is led by a team of experienced academics and administrators committed to our mission of enhancing innovations through quality education."
+        subtitle="AIU is led by a team of experienced academics and administrators committed to our mission of enhancing innovations through quality education."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about' }, { label: 'Leadership', path: '/about/leadership' }]}
       />
 

@@ -9,7 +9,7 @@ const sportsTeams = [
   { name: 'Football (Women)', description: 'The women\'s football team welcomes players of all skill levels and competes regionally.' },
   { name: 'Volleyball', description: 'Mixed volleyball team with regular practice sessions and inter-faculty competitions.' },
   { name: 'Basketball', description: 'Men\'s and women\'s basketball teams that compete in the city league.' },
-  { name: 'Athletics', description: 'Track and field athletes representing AVIU at regional competitions.' },
+  { name: 'Athletics', description: 'Track and field athletes representing AIU at regional competitions.' },
   { name: 'Netball', description: 'Our netball team is one of the most active clubs on campus.' },
 ];
 
@@ -28,7 +28,7 @@ export function SportsRecreation() {
         images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Sports &amp; <em>Recreation</em></>}
-        subtitle="Stay active, make friends, and represent AVIU. Our sports teams, fitness facilities, and intramural leagues offer something for every student, from competitive athletes to casual participants."
+        subtitle="Stay active, make friends, and represent AIU. Our sports teams, fitness facilities, and intramural leagues offer something for every student, from competitive athletes to casual participants."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Student Life', path: '/student-life' }, { label: 'Sports & Recreation', path: '/student-life/sports' }]}
       />
 
@@ -36,7 +36,7 @@ export function SportsRecreation() {
         <div className="section-heading">
           <div>
             <div className="eyebrow"><span className="eyebrow-line" /> Varsity teams</div>
-            <h2>Compete for <em>AVIU.</em></h2>
+            <h2>Compete for <em>AIU.</em></h2>
           </div>
         </div>
         <div className="staff-grid">
@@ -81,7 +81,7 @@ export function SportsRecreation() {
               <div className="library-card">
                 <span className="library-icon"><Users size={24} strokeWidth={1.5} /></span>
                 <strong>Clubs &amp; Societies</strong>
-                <p>From debate club to drama society, AVIU has over 20 student-run clubs and societies.</p>
+                <p>From debate club to drama society, AIU has over 20 student-run clubs and societies.</p>
               </div>
               <div className="library-card">
                 <span className="library-icon"><Users size={24} strokeWidth={1.5} /></span>

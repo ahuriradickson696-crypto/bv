@@ -20,7 +20,7 @@ export function CampusVisits() {
         images={pageImages.admissions}
         eyebrow="Experience campus"
         title={<>Campus <em>Visits</em></>}
-        subtitle="The best way to know if AVIU is right for you is to visit. Join an open day, book a guided tour, or explore our campus virtually from anywhere in the world."
+        subtitle="The best way to know if AIU is right for you is to visit. Join an open day, book a guided tour, or explore our campus virtually from anywhere in the world."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Admissions', path: '/admissions' }, { label: 'Campus Visits', path: '/admissions/campus-visits' }]}
       />
 
@@ -28,7 +28,7 @@ export function CampusVisits() {
         <div className="section-heading">
           <div>
             <div className="eyebrow"><span className="eyebrow-line" /> Plan your visit</div>
-            <h2>Four ways to <em>experience AVIU.</em></h2>
+            <h2>Four ways to <em>experience AIU.</em></h2>
           </div>
         </div>
         <div className="library-grid">

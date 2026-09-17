@@ -6,7 +6,7 @@ import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
 
 const visaSteps = [
-  { step: '1', title: 'Receive Offer Letter', description: 'Once admitted, AVIU issues an official acceptance letter required for your visa application.' },
+  { step: '1', title: 'Receive Offer Letter', description: 'Once admitted, AIU issues an official acceptance letter required for your visa application.' },
   { step: '2', title: 'Gather Documents', description: 'Prepare your passport, acceptance letter, proof of funds, health insurance, and passport photos.' },
   { step: '3', title: 'Apply for Student Visa', description: 'Submit your visa application at the Ugandan embassy or consulate in your country.' },
   { step: '4', title: 'Pre-Departure Briefing', description: 'Attend our online pre-departure briefing covering travel, accommodation, and arrival logistics.' },
@@ -30,7 +30,7 @@ export function InternationalAdmissions() {
         images={pageImages.admissions}
         eyebrow="International applicants"
         title={<>International <em>Admissions</em></>}
-        subtitle="AVIU welcomes students from across East Africa and beyond. This guide covers everything international applicants need — from entry requirements to visa support and arrival orientation."
+        subtitle="AIU welcomes students from across East Africa and beyond. This guide covers everything international applicants need — from entry requirements to visa support and arrival orientation."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Admissions', path: '/admissions' }, { label: 'International', path: '/admissions/international' }]}
       />
 
@@ -43,7 +43,7 @@ export function InternationalAdmissions() {
         </div>
         <div className="two-col-layout">
           <div className="col-half">
-            <p>AVIU accepts a wide range of international qualifications. Below are common equivalencies. If your qualification is not listed, contact the international office for an individual assessment.</p>
+            <p>AIU accepts a wide range of international qualifications. Below are common equivalencies. If your qualification is not listed, contact the international office for an individual assessment.</p>
           </div>
           <div className="col-half">
             <div className="calendar-key-dates">

@@ -5,7 +5,7 @@ import { pageImages } from '@/data/pageImages';
 const calendarItems = [
   { period: '8–14 February 2026', title: 'End of normal registration', detail: 'Late registration surcharge applies after this week.', icon: FileText },
   { period: '15–21 February 2026', title: 'Tuition payment reminder', detail: 'Memo from the Bursar on full tuition payment and extra 50% fees where applicable.', icon: FileText },
-  { period: '22–28 February 2026', title: 'Cultural Gala / AVIU Cultural Day & CAT 2', detail: 'Cultural Day celebrations and Continuous Assessment Tests (CAT 2).', icon: Users },
+  { period: '22–28 February 2026', title: 'Cultural Gala / AIU Cultural Day & CAT 2', detail: 'Cultural Day celebrations and Continuous Assessment Tests (CAT 2).', icon: Users },
   { period: '1–7 March 2026', title: 'Tours & associations', detail: 'Campus tours and student association activities.', icon: Users },
   { period: 'May 2026', title: 'May intake orientation', detail: 'Welcome and orientation for May intake students.', icon: BookOpen },
   { period: 'August 2026', title: 'August 2026 intake open', detail: 'Admissions open for Certificate, Diploma, Bachelor and Postgraduate programmes. Half bursary available until end of August.', icon: Calendar },

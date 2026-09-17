@@ -9,8 +9,8 @@ const scholarships = [
   { icon: HeartHandshake, title: 'Need-Based Bursaries', description: 'Financial assistance for students from disadvantaged backgrounds. Covers 20-40% of tuition based on assessed financial need.', eligibility: 'Demonstrated financial need, academic potential, and Ugandan or East African residency.' },
   { icon: BriefcaseBusiness, title: 'Faculty-Specific Grants', description: 'Research and project grants available within specific faculties. Includes the Innovation Grant for tech students and the Community Health Grant for nursing students.', eligibility: 'Enrolled in the relevant faculty with a approved research or project proposal.' },
   { icon: Award, title: 'Early-Bird Discount', description: 'A 10% tuition discount for students who complete full payment at least 30 days before the start of the semester.', eligibility: 'Available to all students who pay early.' },
-  { icon: HeartHandshake, title: 'Government Sponsorship', description: 'AVIU participates in the government sponsorship scheme for qualifying Ugandan students. Contact the admissions office for details.', eligibility: 'Ugandan nationals who meet government sponsorship criteria.' },
-  { icon: BriefcaseBusiness, title: 'Employer Sponsorship', description: 'Many employers sponsor staff development at AVIU. We provide invoice-based billing and progress reports to sponsoring organisations.', eligibility: 'Employees of partner organisations with management approval.' },
+  { icon: HeartHandshake, title: 'Government Sponsorship', description: 'AIU participates in the government sponsorship scheme for qualifying Ugandan students. Contact the admissions office for details.', eligibility: 'Ugandan nationals who meet government sponsorship criteria.' },
+  { icon: BriefcaseBusiness, title: 'Employer Sponsorship', description: 'Many employers sponsor staff development at AIU. We provide invoice-based billing and progress reports to sponsoring organisations.', eligibility: 'Employees of partner organisations with management approval.' },
 ];
 
 export function Scholarships() {
@@ -22,7 +22,7 @@ export function Scholarships() {
         images={pageImages.admissions}
         eyebrow="Financial support"
         title={<>Scholarships &amp; <em>Financial Aid</em></>}
-        subtitle="AVIU is committed to making education affordable. We offer a range of scholarships, bursaries, and financial aid options to help qualifying students fund their studies."
+        subtitle="AIU is committed to making education affordable. We offer a range of scholarships, bursaries, and financial aid options to help qualifying students fund their studies."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Admissions', path: '/admissions' }, { label: 'Scholarships', path: '/admissions/scholarships' }]}
       />
 
@@ -53,7 +53,7 @@ export function Scholarships() {
           <div className="col-half">
             <div className="eyebrow"><span className="eyebrow-line" /> Payment plans</div>
             <h2>Flexible <em>payment.</em></h2>
-            <p>Even without a scholarship, AVIU offers flexible payment plans. Tuition can be paid in two or three instalments per semester. The bursar\'s office works with students to arrange manageable payment schedules.</p>
+            <p>Even without a scholarship, AIU offers flexible payment plans. Tuition can be paid in two or three instalments per semester. The bursar\'s office works with students to arrange manageable payment schedules.</p>
             <p>Sponsorship and employer-funded tuition arrangements are also available. Contact the bursar for corporate billing options.</p>
           </div>
           <div className="col-half">

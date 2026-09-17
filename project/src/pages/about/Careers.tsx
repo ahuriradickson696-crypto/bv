@@ -30,8 +30,8 @@ export function Careers() {
       <SubPageHero
         images={pageImages.about}
         eyebrow="About"
-        title={<>Careers at <em>AVIU</em></>}
-        subtitle="Join our community of educators, researchers, and professionals dedicated to enhancing innovations through quality education. AVIU offers a rewarding work environment with opportunities for growth and impact."
+        title={<>Careers at <em>AIU</em></>}
+        subtitle="Join our community of educators, researchers, and professionals dedicated to enhancing innovations through quality education. AIU offers a rewarding work environment with opportunities for growth and impact."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about' }, { label: 'Careers', path: '/about/careers' }]}
       />
 
@@ -65,7 +65,7 @@ export function Careers() {
         <div className="section-heading">
           <div>
             <div className="eyebrow"><span className="eyebrow-line" /> Why work here</div>
-            <h2>Working at <em>AVIU.</em></h2>
+            <h2>Working at <em>AIU.</em></h2>
           </div>
         </div>
         <div className="library-grid">

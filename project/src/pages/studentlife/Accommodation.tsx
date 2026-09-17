@@ -5,7 +5,7 @@ import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
 
 const housingOptions = [
-  { icon: Building2, title: 'On-Campus Halls of Residence', description: 'AVIU operates halls of residence on campus with furnished rooms, shared kitchens, and common areas. Priority is given to first-year and international students.', features: ['Single and shared rooms available', 'Wi-Fi and utilities included', '24/7 security', 'Walking distance to classes', 'Residential life officer support'] },
+  { icon: Building2, title: 'On-Campus Halls of Residence', description: 'AIU operates halls of residence on campus with furnished rooms, shared kitchens, and common areas. Priority is given to first-year and international students.', features: ['Single and shared rooms available', 'Wi-Fi and utilities included', '24/7 security', 'Walking distance to classes', 'Residential life officer support'] },
   { icon: Home, title: 'Off-Campus Private Housing', description: 'Many students live in private accommodation near campus. The student services office maintains a list of approved landlords and can assist with finding suitable housing.', features: ['Studio, 1-bedroom, and shared apartments', 'Range of budgets from budget to mid-range', '5-15 minutes walk to campus', 'Independent living with more privacy', 'Tenancy advice and support'] },
 ];
 
@@ -18,7 +18,7 @@ export function Accommodation() {
         images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Accommodation &amp; <em>Housing</em></>}
-        subtitle="Finding the right place to live is an important part of your university experience. AVIU offers on-campus halls of residence and supports students in finding suitable off-campus housing."
+        subtitle="Finding the right place to live is an important part of your university experience. AIU offers on-campus halls of residence and supports students in finding suitable off-campus housing."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Student Life', path: '/student-life' }, { label: 'Accommodation', path: '/student-life/accommodation' }]}
       />
 
@@ -73,7 +73,7 @@ export function Accommodation() {
         <BackgroundCarousel images={pageImages.studentlife} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Housing</div>
-          <h2>Find your home at AVIU.</h2>
+          <h2>Find your home at AIU.</h2>
           <p>Contact student services for housing advice and applications.</p>
         </div>
         <button className="button button-light" onClick={() => navigate('/contact')}>Get in touch <ArrowRight size={17} /></button>

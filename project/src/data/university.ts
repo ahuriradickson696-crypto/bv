@@ -350,7 +350,7 @@ export const newsItems: NewsItem[] = [
     id: 'research-grant-awarded',
     date: '20 Jul 2026',
     category: 'Research',
-    title: 'AVIU Researchers Awarded Grant for Integrative Medicine Study',
+    title: 'AIU Researchers Awarded Grant for Integrative Medicine Study',
     excerpt:
       'A team from the Faculty of Alternative Medicine has received funding to study the efficacy of traditional healing practices alongside modern clinical methods.',
     fullContent:
@@ -370,7 +370,7 @@ export const newsItems: NewsItem[] = [
     id: 'moot-court-success',
     date: '28 Jun 2026',
     category: 'Achievement',
-    title: 'AVIU Students Excel at Inter-University Moot Court Competition',
+    title: 'AIU Students Excel at Inter-University Moot Court Competition',
     excerpt:
       'Our students demonstrated outstanding legal reasoning and advocacy skills at the regional moot court competition.',
     fullContent:
@@ -390,7 +390,7 @@ export const newsItems: NewsItem[] = [
     id: 'partnership-signing',
     date: '01 Jun 2026',
     category: 'Partnership',
-    title: 'AVIU Signs Partnership with Regional Health Authority',
+    title: 'AIU Signs Partnership with Regional Health Authority',
     excerpt:
       'The partnership will create new clinical placement opportunities for nursing and health sciences students.',
     fullContent:
@@ -436,7 +436,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'The Education programme at AVIU transformed my understanding of teaching. The research-oriented approach helped me see education as a tool for social change, not just a career.',
+      'The Education programme at AIU transformed my understanding of teaching. The research-oriented approach helped me see education as a tool for social change, not just a career.',
     name: 'Opio Daniel',
     program: 'Bachelor of Education',
     initials: 'OD',
@@ -508,7 +508,7 @@ export const universityInfo = {
     },
     {
       year: '2020',
-      event: 'AVIU rapidly expands its e-learning platform, ensuring uninterrupted education during the global pandemic.',
+      event: 'AIU rapidly expands its e-learning platform, ensuring uninterrupted education during the global pandemic.',
     },
     {
       year: '2023',
@@ -581,7 +581,7 @@ export const events: EventItem[] = [
     date: '2026-09-15',
     day: '15',
     month: 'Sep',
-    title: 'AVIU Innovation Fair 2026',
+    title: 'AIU Innovation Fair 2026',
     time: '9:00 AM - 4:00 PM',
     location: 'Innovation Centre, Main Campus',
     category: 'Events',
@@ -685,7 +685,7 @@ export type StudentLifeItem = {
 
 export const studentLifeItems: StudentLifeItem[] = [
   {
-    title: 'Studying at AVIU',
+    title: 'Studying at AIU',
     description: 'We provide resources that enrich both the student experience and campus life, from academic support to extracurricular activities.',
     icon: BookOpen,
   },
@@ -711,7 +711,7 @@ export const studentLifeItems: StudentLifeItem[] = [
   },
   {
     title: 'Sports & Recreation',
-    description: 'From football to debate club, AVIU offers a range of activities to keep students active, engaged, and connected outside the classroom.',
+    description: 'From football to debate club, AIU offers a range of activities to keep students active, engaged, and connected outside the classroom.',
     icon: Trophy,
   },
   {
@@ -824,7 +824,7 @@ export type FeeItem = {
 };
 
 export const feeStructure: FeeItem[] = [
-  { programme: 'PhD Programmes', uganda: 'Coming Soon', international: 'Coming Soon', perLabel: '—' },
+  { programme: 'PhD Programmes', uganda: 'UGX 3,500,000', international: 'USD 1,200', perLabel: 'per semester' },
   { programme: 'Masters Degree Programmes', uganda: 'UGX 2,800,000', international: 'USD 950', perLabel: 'per semester' },
   { programme: 'Postgraduate Diploma Programmes', uganda: 'UGX 1,800,000', international: 'USD 600', perLabel: 'per semester' },
   { programme: 'Undergraduate Programmes', uganda: 'UGX 1,200,000', international: 'USD 400', perLabel: 'per semester' },
@@ -843,7 +843,7 @@ export const feePaymentInfo = [
   },
   {
     title: 'Scholarships & Discounts',
-    description: 'AVIU offers merit-based scholarships and early-bird discounts for qualifying students. Contact the admissions office for current opportunities.',
+    description: 'AIU offers merit-based scholarships and early-bird discounts for qualifying students. Contact the admissions office for current opportunities.',
   },
   {
     title: 'Refund Policy',
@@ -859,7 +859,7 @@ export type FAQItem = {
 export const admissionFAQs: FAQItem[] = [
   {
     question: 'When can I apply to Avance International University?',
-    answer: 'AVIU offers three intakes per year: January, May, and September. Applications typically open two to three months before each intake. The September 2026 intake is currently accepting applications until 16th September 2026.',
+    answer: 'AIU offers three intakes per year: January, May, and September. Applications typically open two to three months before each intake. The September 2026 intake is currently accepting applications until 16th September 2026.',
   },
   {
     question: 'What are the entry requirements for undergraduate programmes?',
@@ -867,27 +867,27 @@ export const admissionFAQs: FAQItem[] = [
   },
   {
     question: 'Can I pay tuition in instalments?',
-    answer: 'Yes, AVIU offers flexible payment plans. Students can arrange to pay tuition in two or three instalments per semester. Contact the bursar\u2019s office to set up a payment plan.',
+    answer: 'Yes, AIU offers flexible payment plans. Students can arrange to pay tuition in two or three instalments per semester. Contact the bursar\u2019s office to set up a payment plan.',
   },
   {
-    question: 'Does AVIU offer scholarships?',
+    question: 'Does AIU offer scholarships?',
     answer: 'Yes, merit-based scholarships and early-bird discounts are available for qualifying students. The admissions office can provide details on current scholarship opportunities and eligibility criteria.',
   },
   {
     question: 'Are there online learning options?',
-    answer: 'Yes, AVIU has a robust e-learning platform with over 3 million video lessons and 2,500+ daily live classes. Many programmes offer blended learning options combining online and in-person instruction.',
+    answer: 'Yes, AIU has a robust e-learning platform with over 3 million video lessons and 2,500+ daily live classes. Many programmes offer blended learning options combining online and in-person instruction.',
   },
   {
     question: 'How long does the admissions process take?',
     answer: 'Once all required documents are submitted, the admissions team typically reviews applications and communicates decisions within two weeks. Early application is recommended to allow ample time for processing.',
   },
   {
-    question: 'Does AVIU accept international students?',
-    answer: 'Yes, AVIU welcomes international students. International applicants should submit certified academic transcripts, proof of English proficiency, and a valid passport. Separate fee rates apply to international students.',
+    question: 'Does AIU accept international students?',
+    answer: 'Yes, AIU welcomes international students. International applicants should submit certified academic transcripts, proof of English proficiency, and a valid passport. Separate fee rates apply to international students.',
   },
   {
     question: 'What support services are available for students?',
-    answer: 'AVIU offers counselling services, career guidance, academic support, accommodation assistance, and a dedicated student portal for accessing academic resources and support.',
+    answer: 'AIU offers counselling services, career guidance, academic support, accommodation assistance, and a dedicated student portal for accessing academic resources and support.',
   },
 ];
 

@@ -37,7 +37,7 @@ export function CourseFinder() {
         images={pageImages.study}
         eyebrow="Course discovery"
         title={<>Course <em>Finder</em></>}
-        subtitle="Search and filter all programmes at AVIU by keyword, level, and faculty. Find the right programme for your career goals."
+        subtitle="Search and filter all programmes at AIU by keyword, level, and faculty. Find the right programme for your career goals."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Study', path: '/study' }, { label: 'Course Finder', path: '/study/course-finder' }]}
       />
 
@@ -121,7 +121,7 @@ export function CourseFinder() {
               <div className="library-card">
                 <span className="library-icon"><ArrowRight size={24} strokeWidth={1.5} /></span>
                 <strong>Exemption Criteria</strong>
-                <p>Check if your prior qualifications qualify for credit exemptions toward your AVIU programme.</p>
+                <p>Check if your prior qualifications qualify for credit exemptions toward your AIU programme.</p>
               </div>
             </div>
           </div>

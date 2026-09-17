@@ -3,7 +3,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplyProvider } from '@/components/ApplyContext';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { AutoPlayVideos } from '@/components/AutoPlayVideos';
 import { Home } from '@/pages/Home';
 import { Study } from '@/pages/Study';
 import { Admissions } from '@/pages/Admissions';
@@ -161,7 +160,6 @@ function Routes() {
     <div className="site-shell">
       <Header />
       <main>{renderPage()}</main>
-      <AutoPlayVideos />
       <Footer />
       <WhatsAppButton />
     </div>

@@ -61,7 +61,7 @@ export function Admissions() {
     <div className="page-content">
       <PageHero
         images={pageImages.admissions}
-        eyebrow="Join AVIU"
+        eyebrow="Join AIU"
         title={<>Begin your <em>application.</em></>}
         subtitle="We welcome students from all backgrounds. Our admissions process is straightforward, transparent, and designed to help you find the right fit. We offer three intakes per year: January, May, and August."
       />

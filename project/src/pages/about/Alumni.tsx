@@ -7,8 +7,8 @@ import { pageImages } from '@/data/pageImages';
 const alumniServices = [
   { icon: Users, title: 'Alumni Association', description: 'Join our growing alumni network with chapters across East Africa. Connect with fellow graduates, attend events, and mentor current students.' },
   { icon: FileText, title: 'Transcripts & Verification', description: 'Request official transcripts, degree verification, and replacement certificates through the academic registrar\'s office.' },
-  { icon: GraduationCap, title: 'Alumni Benefits', description: 'Access library resources, career services, continuing education discounts, and networking events exclusively for AVIU alumni.' },
-  { icon: Gift, title: 'Give to AVIU', description: 'Support scholarships, research, and campus development through the AVIU Foundation. Every contribution makes a difference.' },
+  { icon: GraduationCap, title: 'Alumni Benefits', description: 'Access library resources, career services, continuing education discounts, and networking events exclusively for AIU alumni.' },
+  { icon: Gift, title: 'Give to AIU', description: 'Support scholarships, research, and campus development through the AIU Foundation. Every contribution makes a difference.' },
 ];
 
 export function Alumni() {
@@ -20,7 +20,7 @@ export function Alumni() {
         images={pageImages.about}
         eyebrow="About"
         title={<>Alumni &amp; <em>Donor Relations</em></>}
-        subtitle="Once a student, always part of the AVIU family. Our alumni community spans across East Africa and beyond, contributing to their communities and professions."
+        subtitle="Once a student, always part of the AIU family. Our alumni community spans across East Africa and beyond, contributing to their communities and professions."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about' }, { label: 'Alumni', path: '/about/alumni' }]}
       />
 
@@ -71,8 +71,8 @@ export function Alumni() {
           <div className="col-half">
             <div className="eyebrow"><span className="eyebrow-line" /> Giving</div>
             <h2>Support the next <em>generation.</em></h2>
-            <p>Your generosity helps fund scholarships, research grants, and campus improvements that benefit current and future students. The AVIU Foundation manages all donations and ensures they are directed where they are needed most.</p>
-            <p>Whether you give to the general fund, a specific scholarship, or a building project, your contribution has a lasting impact on the AVIU community.</p>
+            <p>Your generosity helps fund scholarships, research grants, and campus improvements that benefit current and future students. The AIU Foundation manages all donations and ensures they are directed where they are needed most.</p>
+            <p>Whether you give to the general fund, a specific scholarship, or a building project, your contribution has a lasting impact on the AIU community.</p>
           </div>
           <div className="col-half">
             <div className="library-grid">
@@ -106,7 +106,7 @@ export function Alumni() {
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Alumni</div>
           <h2>Join the alumni network.</h2>
-          <p>Update your details and get connected with the AVIU alumni community.</p>
+          <p>Update your details and get connected with the AIU alumni community.</p>
         </div>
         <button className="button button-light" onClick={() => navigate('/contact')}>Get in touch <ArrowRight size={17} /></button>
       </section>

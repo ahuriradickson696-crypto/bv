@@ -7,13 +7,13 @@ import { useApply } from '@/components/ApplyContext';
 
 const announcements = [
   'Admissions for the January, May & August intakes are now open — apply today',
-  'Four faculties. Over 30 programmes. Find your path at AVIU',
+  'Four faculties. Over 30 programmes. Find your path at AIU',
   'Merit scholarships cover 25–50% of tuition for qualifying students',
-  'January 2027 intake orientation begins 10 January — welcome to AVIU',
+  'January 2027 intake orientation begins 10 January — welcome to AIU',
   'Open Day for prospective students: 25 October 2026 — register now',
-  'AVIU Innovation Fair 2026: 15 September — see student projects on display',
+  'AIU Innovation Fair 2026: 15 September — see student projects on display',
   'Annual Research Conference: 5 October — faculty and postgraduate presentations',
-  'Student Startup Pitch Competition: 8 November — watch AVIU entrepreneurs shine',
+  'Student Startup Pitch Competition: 8 November — watch AIU entrepreneurs shine',
   'Public Health Symposium: 15 November — tackling East African health challenges',
   'Faculty of Nursing Graduation Ceremony: 20 September',
   'Faculty of Education Graduation Ceremony: 5 December',
@@ -92,12 +92,12 @@ const navGroups: NavGroup[] = [
   {
     label: 'About',
     items: [
-      { label: 'About AVIU', path: '/about' },
+      { label: 'About AIU', path: '/about' },
       { label: 'Leadership & Governance', path: '/about/leadership' },
       { label: 'University Organisation', path: '/about/organisation' },
       { label: 'Campus & Visitor Info', path: '/about/campus' },
       { label: 'Alumni & Donors', path: '/about/alumni' },
-      { label: 'Careers at AVIU', path: '/about/careers' },
+      { label: 'Careers at AIU', path: '/about/careers' },
       { label: 'Staff Directory', path: '/staff' },
       { label: 'Gallery', path: '/gallery' },
       { label: 'Academic Calendar', path: '/academic-calendar' },
@@ -234,7 +234,7 @@ export function Header() {
             E-Learning Portal
           </a>
           <button className="nav-apply mobile-apply" onClick={openApply}>
-            Apply to AVIU
+            Apply to AIU
           </button>
         </nav>
         <div className="header-actions">
@@ -255,7 +255,7 @@ export function Header() {
             E-Learning
           </a>
           <button className="nav-apply" onClick={openApply}>
-            Apply to AVIU
+            Apply to AIU
           </button>
           <button
             className="menu-button"

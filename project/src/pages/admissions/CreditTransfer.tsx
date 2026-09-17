@@ -6,13 +6,13 @@ import { pageImages } from '@/data/pageImages';
 
 const rplInfo = [
   { title: 'Recognition of Prior Learning (RPL)', description: 'If you have work experience or informal learning that is relevant to your chosen programme, you can apply for RPL assessment. A portfolio of evidence is evaluated by faculty, and credits may be awarded.' },
-  { title: 'University Transfer', description: 'Students from other recognised universities can transfer to AVIU. Credit transfer is assessed on a case-by-case basis, comparing your prior learning with our curriculum.' },
+  { title: 'University Transfer', description: 'Students from other recognised universities can transfer to AIU. Credit transfer is assessed on a case-by-case basis, comparing your prior learning with our curriculum.' },
   { title: 'Advanced Standing', description: 'Diploma holders progressing to a related bachelor\'s degree may receive advanced standing, reducing the duration of their degree by up to one year.' },
 ];
 
 const transferProcess = [
   'Submit your application with certified transcripts from your previous institution',
-  'The academic registrar conducts a credit mapping against the AVIU curriculum',
+  'The academic registrar conducts a credit mapping against the AIU curriculum',
   'Approved credits are transferred and you are placed at the appropriate level',
   'A maximum of 50% of programme credits can be transferred from another institution',
   'Credits older than 5 years may require a competency assessment',

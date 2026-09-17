@@ -28,7 +28,7 @@ export function EntryRequirements() {
         images={pageImages.admissions}
         eyebrow="Admissions"
         title={<>Entry <em>Requirements</em></>}
-        subtitle="Find the academic qualifications needed for each programme level. AVIU offers multiple entry pathways to ensure education is accessible to all qualified applicants."
+        subtitle="Find the academic qualifications needed for each programme level. AIU offers multiple entry pathways to ensure education is accessible to all qualified applicants."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Admissions', path: '/admissions' }, { label: 'Entry Requirements', path: '/admissions/entry-requirements' }]}
       />
 

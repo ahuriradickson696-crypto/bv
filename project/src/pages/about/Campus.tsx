@@ -26,7 +26,7 @@ export function Campus() {
         </div>
         <div className="two-col-layout">
           <div className="col-half">
-            <p>The AVIU main campus is situated in Kampala, Uganda's capital and largest city. The campus houses all four faculties, the library, innovation centre, nursing simulation lab, lecture halls, sports grounds, and administrative offices.</p>
+            <p>The AIU main campus is situated in Kampala, Uganda's capital and largest city. The campus houses all four faculties, the library, innovation centre, nursing simulation lab, lecture halls, sports grounds, and administrative offices.</p>
             <p>Our campus is designed to support a vibrant student community with modern learning facilities, green spaces, and social areas. We continue to invest in new buildings and infrastructure to enhance the student experience.</p>
             <div className="contact-info" style={{ marginTop: '24px' }}>
               <div className="contact-item">
@@ -58,7 +58,7 @@ export function Campus() {
               <div className="library-card">
                 <span className="library-icon"><MapPin size={24} strokeWidth={1.5} /></span>
                 <strong>Satellite Campuses</strong>
-                <p>AVIU is expanding with regional study centres across Uganda. Contact us for locations near you.</p>
+                <p>AIU is expanding with regional study centres across Uganda. Contact us for locations near you.</p>
               </div>
             </div>
           </div>

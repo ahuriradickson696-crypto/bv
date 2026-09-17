@@ -78,11 +78,11 @@ export function Footer() {
           </div>
           <div>
             <strong>About</strong>
-            <a onClick={link('/about')}>About AVIU</a>
+            <a onClick={link('/about')}>About AIU</a>
             <a onClick={link('/about/leadership')}>Leadership</a>
             <a onClick={link('/about/organisation')}>Organisation</a>
             <a onClick={link('/about/alumni')}>Alumni</a>
-            <a onClick={link('/about/careers')}>Careers at AVIU</a>
+            <a onClick={link('/about/careers')}>Careers at AIU</a>
             <a onClick={link('/gallery')}>Gallery</a>
             <a onClick={link('/academic-calendar')}>Academic Calendar</a>
             <a onClick={link('/downloads')}>Downloads</a>
