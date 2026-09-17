@@ -5,6 +5,7 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
 const levelFilters = ['All', 'Certificate', 'Diploma', 'Bachelor', 'Postgraduate Diploma', 'Masters'] as const;
@@ -27,7 +28,7 @@ export function Study() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.study}
+videos={videosFor('study')}         images={pageImages.study}
         eyebrow="Academics"
         title={<>Study at <em>Avance</em></>}
         subtitle="Browse our full NCHE-accredited catalogue. AVIU delivers Certificate, Diploma, Bachelor, Postgraduate Diploma and Masters pathways across Education, Business, Computing and Health Sciences — with clear entry routes, teaching practice and industry links. PhD programmes are coming soon and are not listed here yet."
@@ -168,7 +169,7 @@ export function Study() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Ready to apply?

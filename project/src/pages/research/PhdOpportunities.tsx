@@ -1,5 +1,6 @@
 import { ArrowRight, Clock } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -10,7 +11,7 @@ export function PhdOpportunities() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.research}
+videos={videosFor('research')}         images={pageImages.research}
         eyebrow="Research"
         title={<>PhD <em>Opportunities</em></>}
         subtitle="Doctoral programmes at AVIU are currently being prepared. Check back soon for funded studentships and research opportunities."
@@ -40,7 +41,7 @@ export function PhdOpportunities() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.research} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.research} overlay={0.88}  videos={videosFor('research')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Doctoral study</div>
           <h2>Stay informed.</h2>

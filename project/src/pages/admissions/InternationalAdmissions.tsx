@@ -1,5 +1,6 @@
 import { ArrowRight, Globe2, FileText, Plane, MapPin } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -27,7 +28,7 @@ export function InternationalAdmissions() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.admissions}
+videos={videosFor('admissions')}         images={pageImages.admissions}
         eyebrow="International applicants"
         title={<>International <em>Admissions</em></>}
         subtitle="AVIU welcomes students from across East Africa and beyond. This guide covers everything international applicants need — from entry requirements to visa support and arrival orientation."
@@ -156,7 +157,7 @@ export function InternationalAdmissions() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> International applicants</div>
           <h2>Start your journey.</h2>

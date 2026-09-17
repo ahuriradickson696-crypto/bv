@@ -5,6 +5,7 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
 export function News() {
@@ -20,7 +21,7 @@ export function News() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.news}
+videos={videosFor('news')}         images={pageImages.news}
         eyebrow="News & stories"
         title={<>What's happening at <em>Avance</em></>}
         subtitle="Stay up to date with the latest announcements, events, and stories from across our campus. From research breakthroughs to student achievements, there is always something happening at Avance International University."
@@ -58,7 +59,7 @@ export function News() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.news} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.news} overlay={0.88}  videos={videosFor('news')} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Stay informed

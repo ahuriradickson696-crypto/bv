@@ -4,6 +4,7 @@ import { universityInfo } from '@/data/university';
 import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
 export function Contact() {
@@ -19,7 +20,7 @@ export function Contact() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.contact}
+videos={videosFor('contact')}         images={pageImages.contact}
         eyebrow="Get in touch"
         title={<>Contact <em>Avance</em></>}
         subtitle="Have a question about admissions, programmes, or visiting campus? We are here to help. Reach out and our team will respond within two business days."

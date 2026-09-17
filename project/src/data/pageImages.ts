@@ -34,7 +34,7 @@ const avanceStudents2 = '/images/avance-students-2.png';
 const avanceStudents3 = '/images/avance-students-3.png';
 
 
-const allGallery = [
+export const allGallery = [
   campusAviuStudents1,
   campusAviuEvent1,
   campusAviuStudents2,
@@ -190,4 +190,3 @@ export const pageImages = {
   gallery: allGallery,
 };
 
-export { allGallery };

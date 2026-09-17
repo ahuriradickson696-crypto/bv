@@ -14,7 +14,6 @@ function showBootError(err: unknown) {
         <h1 style="color: #2d1454;">AVIU site failed to load</h1>
         <p style="color: #5a4a6e;">A JavaScript error stopped the app. Details:</p>
         <pre style="background:#f4ecfa;padding:16px;border-radius:8px;overflow:auto;font-size:12px;">${message}\n\n${stack || ''}</pre>
-        <p style="font-size:13px;color:#8a7a9e;">If you see this on Vercel, check the browser console (F12) and that the latest build deployed successfully.</p>
       </div>
     `;
   }
@@ -32,9 +31,11 @@ try {
   showBootError(err);
 }
 
-window.addEventListener('error', (e) => {
-  console.error('[AVIU runtime error]', e.error || e.message);
-});
-window.addEventListener('unhandledrejection', (e) => {
-  console.error('[AVIU unhandled rejection]', e.reason);
-});
+// Register Progressive Web App service worker (HTTPS / localhost only)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => {
+      console.warn('[AVIU] Service worker not registered', err);
+    });
+  });
+}

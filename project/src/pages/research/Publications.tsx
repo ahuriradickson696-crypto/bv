@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpen, FileText, Microscope } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -21,7 +22,7 @@ export function Publications() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.research}
+videos={videosFor('research')}         images={pageImages.research}
         eyebrow="Research"
         title={<>Publications &amp; <em>Repository</em></>}
         subtitle="Explore the research output of AVIU faculty and postgraduate students. Our institutional repository provides open access to theses, dissertations, journal articles, and conference papers."
@@ -86,7 +87,7 @@ export function Publications() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.research} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.research} overlay={0.88}  videos={videosFor('research')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Research</div>
           <h2>Explore our research.</h2>

@@ -1,43 +1,32 @@
-import { useEffect, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import type { GalleryTikTok } from '@/data/galleryMedia';
 
-function ensureTikTokScript() {
-  if (typeof window === 'undefined') return;
-  if (document.querySelector('script[data-aviu-tiktok]')) {
-    const tt = (window as unknown as { tiktok?: { embed?: { lib?: { render?: () => void } } } }).tiktok;
-    tt?.embed?.lib?.render?.();
-    return;
-  }
-  const s = document.createElement('script');
-  s.src = 'https://www.tiktok.com/embed.js';
-  s.async = true;
-  s.setAttribute('data-aviu-tiktok', '1');
-  document.body.appendChild(s);
-}
-
-/** Clean TikTok-only embed — no extra marketing copy */
+/**
+ * TikTok via official embed iframe — reliable on mobile & desktop.
+ * Does not autoplay with sound.
+ */
 export function TikTokEmbed({ item }: { item: GalleryTikTok; compact?: boolean }) {
-  useEffect(() => {
-    ensureTikTokScript();
-    const t = window.setTimeout(() => ensureTikTokScript(), 500);
-    return () => window.clearTimeout(t);
-  }, [item.videoId]);
+  const src = `https://www.tiktok.com/embed/v2/${item.videoId}?lang=en-US`;
 
   return (
     <div className="tiktok-embed-wrap tiktok-clean">
-      <blockquote
-        className="tiktok-embed"
-        cite={item.cite}
-        data-video-id={item.videoId}
-        data-autoplay="true"
-        style={{ maxWidth: 605, minWidth: 280, margin: '0 auto' }}
+      <iframe
+        src={src}
+        title={item.title || 'AVIU on TikTok'}
+        allow="encrypted-media; fullscreen; picture-in-picture"
+        allowFullScreen
+        loading="lazy"
+        className="tiktok-iframe"
+        referrerPolicy="strict-origin-when-cross-origin"
+      />
+      <a
+        className="tiktok-open-link"
+        href={item.cite}
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <section>
-          <a target="_blank" rel="noopener noreferrer" href={item.cite}>
-            @{item.author?.replace('@', '') || 'avance_iu_uganda'} on TikTok
-          </a>
-        </section>
-      </blockquote>
+        Open on TikTok
+      </a>
     </div>
   );
 }
@@ -45,7 +34,6 @@ export function TikTokEmbed({ item }: { item: GalleryTikTok; compact?: boolean }
 export function TikTokStrip({
   items,
   title,
-  subtitle,
 }: {
   items: GalleryTikTok[];
   title?: ReactNode;
@@ -54,17 +42,13 @@ export function TikTokStrip({
   if (!items.length) return null;
   return (
     <section className="section-pad tiktok-strip-section">
-      {(title || subtitle) && (
+      {title && (
         <div className="section-heading">
           <div>
-            {title && (
-              <>
-                <div className="eyebrow">
-                  <span className="eyebrow-line" /> TikTok
-                </div>
-                <h2>{title}</h2>
-              </>
-            )}
+            <div className="eyebrow">
+              <span className="eyebrow-line" /> TikTok
+            </div>
+            <h2>{title}</h2>
           </div>
         </div>
       )}

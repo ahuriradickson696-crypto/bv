@@ -1,11 +1,12 @@
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 
 export function Cookies() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.about}
+videos={videosFor('home')}         images={pageImages.about}
         eyebrow="Legal"
         title={<>Cookie <em>Policy</em></>}
         subtitle="How Avance International University uses cookies and similar technologies."

@@ -1,6 +1,7 @@
 import { ArrowRight, Clock, Award } from 'lucide-react';
 import { faculties, programmeSlug } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -18,7 +19,7 @@ export function UndergraduateStudy() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.study}
+videos={videosFor('study')}         images={pageImages.study}
         eyebrow="Degree level"
         title={<>Undergraduate <em>Study</em></>}
         subtitle="Begin your academic journey with a bachelor's degree, diploma, or certificate. Our undergraduate programmes combine theory with hands-on practice to prepare you for the workforce or further study."
@@ -115,7 +116,7 @@ export function UndergraduateStudy() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Ready to start?</div>
           <h2>Apply for undergraduate study.</h2>

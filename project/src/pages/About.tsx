@@ -4,6 +4,7 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 
 const campusImage = '/images/campus-building.jpg';
 
@@ -13,7 +14,7 @@ export function About() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.about}
+videos={videosFor('about')}         images={pageImages.about}
         eyebrow="Our story"
         title={<>About <em>Avance</em></>}
         subtitle="A private institution in Uganda committed to enhancing innovations through hands-on, research-oriented education. We identify, analyse, and focus on each student's strengths, shaping them to thrive in today's competitive world of work."
@@ -106,7 +107,7 @@ export function About() {
           </div>
         </div>
         <div className="stats-strip">
-          <BackgroundCarousel images={pageImages.about} overlay={0.9} />
+          <BackgroundCarousel images={pageImages.about} overlay={0.9}  videos={videosFor('about')} />
           {homeStats.map((stat) => (
             <div className="stat-item" key={stat.label}>
               <stat.icon size={22} strokeWidth={1.5} />
@@ -228,7 +229,7 @@ export function About() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.about} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.about} overlay={0.88}  videos={videosFor('about')} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Visit us

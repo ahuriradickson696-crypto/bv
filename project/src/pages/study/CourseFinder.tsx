@@ -2,10 +2,12 @@ import { useState, useMemo } from 'react';
 import { ArrowRight, Clock, Search, Download, FileSpreadsheet } from 'lucide-react';
 import { faculties, accreditedProgrammes, programmeSlug } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
+import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
+import { consumePendingSearch } from '@/lib/searchQuery';
 
 export function CourseFinder() {
   const { navigate } = useRouter();
@@ -14,7 +16,8 @@ export function CourseFinder() {
   const facultyNames = ['All', ...faculties.map((f) => f.shortName)];
   const disciplines = ['All', ...Array.from(new Set(accreditedProgrammes.map((p) => p.tierDiscipline))).sort()];
 
-  const [query, setQuery] = useState('');
+  // Picks up any search term the person typed into the header search bar on another page.
+  const [query, setQuery] = useState(() => consumePendingSearch());
   const [faculty, setFaculty] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
@@ -46,9 +49,6 @@ export function CourseFinder() {
       'Level',
       'Tier Discipline',
       'Duration',
-      'Last Accreditation',
-      'Due for Review',
-      'Review Year',
       'District',
       'Description',
     ];
@@ -59,9 +59,6 @@ export function CourseFinder() {
         p.level,
         `"${p.tierDiscipline}"`,
         p.duration,
-        p.lastAccreditation,
-        p.dueForReview,
-        p.reviewYear,
         p.district,
         `"${p.description.replace(/"/g, '""')}"`,
       ].join(',')
@@ -91,14 +88,14 @@ export function CourseFinder() {
   return (
     <div className="page-content">
       <SubPageHero
-        images={pageImages.study}
+videos={videosFor('study')}         images={pageImages.study}
         eyebrow="Accredited programmes"
         title={
           <>
             Course <em>Finder</em>
           </>
         }
-        subtitle="Search all 25 NCHE-accredited bachelor programmes at Avance International University. Filter by faculty or discipline and download the catalogue (CSV / JSON)."
+        subtitle="Search all 25 NCHE-accredited bachelor programmes at Avance International University. Filter by faculty or discipline and download the catalogue (CSV / JSON). Accreditation years are held by the University and NCHE."
         crumbs={[
           { label: 'Home', path: '/' },
           { label: 'Study', path: '/study' },
@@ -177,7 +174,7 @@ export function CourseFinder() {
                       <Clock size={13} /> {p.duration}
                     </span>
                     <span style={{ fontSize: 12, color: 'var(--ink-muted)' }}>
-                      Accredited {p.lastAccreditation} · Review {p.reviewYear}
+                      NCHE accredited
                     </span>
                   </div>
                   <div style={{ display: 'flex', gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
@@ -199,7 +196,7 @@ export function CourseFinder() {
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> International & local applicants

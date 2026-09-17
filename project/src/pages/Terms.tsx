@@ -1,11 +1,12 @@
 import { PageHero } from '@/components/PageHero';
 import { pageImages } from '@/data/pageImages';
+import { videosFor } from '@/data/pageVideos';
 
 export function Terms() {
   return (
     <div className="page-content">
       <PageHero
-        images={pageImages.about}
+videos={videosFor('home')}         images={pageImages.about}
         eyebrow="Legal"
         title={<>Terms of <em>Use</em></>}
         subtitle="Terms governing use of the Avance International University website and online services."

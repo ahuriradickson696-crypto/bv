@@ -6,7 +6,7 @@ const titles: Record<string, string> = {
   '/study': 'Study Programmes | AVIU',
   '/study/undergraduate': 'Undergraduate Study | AVIU',
   '/study/postgraduate': 'Postgraduate Study | AVIU',
-  '/study/online': 'Online & E-Learning | AVIU',
+  '/study/online': 'Online Learning | AVIU',
   '/study/international': 'International Study | AVIU',
   '/study/course-finder': 'Course Finder — 25 NCHE Programmes | AVIU',
   '/admissions': 'Admissions | AVIU',
@@ -17,14 +17,24 @@ const titles: Record<string, string> = {
   '/admissions/scholarships': 'Scholarships (Coming Soon) | AVIU',
   '/admissions/campus-visits': 'Campus Visits | AVIU',
   '/research': 'Research | AVIU',
+  '/research/centres': 'Research Centres | AVIU',
   '/research/phd-opportunities': 'PhD Opportunities (Coming Soon) | AVIU',
+  '/research/publications': 'Publications & Repository | AVIU',
   '/student-life': 'Student Life | AVIU',
+  '/student-life/accommodation': 'Accommodation & Housing | AVIU',
+  '/student-life/health': 'Health & Wellbeing | AVIU',
+  '/student-life/sports': 'Sports & Recreation | AVIU',
+  '/student-life/careers': 'Career Services | AVIU',
   '/about': 'About AVIU',
   '/about/leadership': 'Leadership & Governance | AVIU',
   '/about/campus': 'Campus | AVIU',
-  '/about/alumni': 'Alumni | AVIU',
+  '/about/alumni': 'Alumni & Donors | AVIU',
+  '/about/careers': 'Careers at AVIU',
+  '/about/organisation': 'University Organisation | AVIU',
   '/fees': 'Fees (Coming Soon) | AVIU',
   '/contact': 'Contact | AVIU',
+  '/contact/directory': 'Staff & Department Directory | AVIU',
+  '/contact/campus-safety': 'Campus Safety | AVIU',
   '/news': 'News | AVIU',
   '/events': 'Events | AVIU',
   '/gallery': 'Gallery | AVIU',
@@ -51,11 +61,17 @@ export function DocumentHead() {
   useEffect(() => {
     const base = 'Avance International University — Enhancing Innovations';
     if (path.startsWith('/study/programme/')) return; // handled by ProgrammeDetail
-    document.title = titles[path] || base;
+    if (path.startsWith('/elearning')) {
+      document.title = 'E-Learning Portal | AVIU';
+    } else {
+      document.title = titles[path] || base;
+    }
 
     const content =
       descriptions[path] ||
-      'Avance International University (AVIU) is a private NCHE-accredited university in Uganda offering bachelor programmes for local and international students.';
+      (path.startsWith('/elearning')
+        ? 'Access live classes, video lessons, assignments and your student dashboard from the AVIU e-learning portal.'
+        : 'Avance International University (AVIU) is a private NCHE-accredited university in Uganda offering bachelor programmes for local and international students.');
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
