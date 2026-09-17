@@ -1,42 +1,34 @@
 import { type ReactNode } from 'react';
-import { AVIU_VIDEOS, youtubeBgSrc } from '@/data/pageVideos';
+import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 
-/**
- * Compact page banner — title always readable.
- * Video stays behind the banner only; page body is never covered.
- */
 export function PageHero({
   eyebrow,
   title,
   subtitle,
   children,
+  images,
 }: {
   eyebrow: string;
   title: ReactNode;
   subtitle?: string;
   children?: ReactNode;
   images?: string[];
-  videos?: string[];
 }) {
-  // Graduation + campus environment
-  const bgId = AVIU_VIDEOS.facilities;
-
   return (
-    <section className="page-hero-safe">
-      <div className="page-hero-safe-bg" aria-hidden="true">
-        <iframe
-          src={youtubeBgSrc(bgId)}
-          title=""
-          allow="autoplay; encrypted-media"
-          tabIndex={-1}
-        />
-        <div className="page-hero-safe-shade" />
-      </div>
-      <div className="page-hero-safe-content">
-        <p className="page-hero-safe-eyebrow">{eyebrow}</p>
-        <h1 className="page-hero-safe-title">{title}</h1>
-        {subtitle ? <p className="page-hero-safe-sub">{subtitle}</p> : null}
+    <section className="page-hero">
+      <BackgroundCarousel images={images} />
+      <div className="page-hero-inner">
+        <div className="eyebrow">
+          <span className="eyebrow-line" /> {eyebrow}
+        </div>
+        <h1>{title}</h1>
+        {subtitle && <p className="page-hero-text">{subtitle}</p>}
         {children}
+      </div>
+      <div className="page-hero-deco" aria-hidden="true">
+        <span className="deco-circle deco-1" />
+        <span className="deco-circle deco-2" />
+        <span className="deco-circle deco-3" />
       </div>
     </section>
   );

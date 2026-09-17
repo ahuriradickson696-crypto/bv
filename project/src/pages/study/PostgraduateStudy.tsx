@@ -1,7 +1,6 @@
 import { ArrowRight, Clock, Microscope } from 'lucide-react';
 import { faculties } from '@/data/university';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -19,7 +18,7 @@ export function PostgraduateStudy() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow="Degree level"
         title={<>Postgraduate &amp; <em>Doctoral Study</em></>}
         subtitle="Advance your career and contribute to cutting-edge research with our master's, doctoral, and postgraduate diploma programmes. Designed for working professionals and aspiring researchers alike."
@@ -94,7 +93,7 @@ videos={videosFor('study')}         images={pageImages.study}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Ready to advance?</div>
           <h2>Apply for postgraduate study.</h2>

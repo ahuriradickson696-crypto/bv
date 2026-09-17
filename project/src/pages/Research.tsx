@@ -3,7 +3,6 @@ import { researchAreas, researchProjects, researchCentres, universityInfo } from
 import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 
 const statusColors: Record<string, string> = {
   Ongoing: 'status-ongoing',
@@ -17,7 +16,7 @@ export function Research() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('research')}         images={pageImages.research}
+        images={pageImages.research}
         eyebrow="Discovery"
         title={<>Research at <em>Avance</em></>}
         subtitle="Avance International University is renowned for groundbreaking research across technology, medicine, and the social sciences. We engage students in research-oriented teaching across all our programmes, ensuring that learning is driven by inquiry and discovery."

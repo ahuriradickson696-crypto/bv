@@ -1,16 +1,15 @@
 import { ArrowRight, FileText, Upload, CreditCard, CheckCircle2 } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
 
 const steps = [
-  { icon: FileText, title: 'Choose your programme', description: 'Browse the Course Finder and open the full programme page for entry requirements, structure and career outcomes. Confirm the intake (January, May, August or September).' },
-  { icon: FileText, title: 'Submit an online enquiry', description: 'Use Apply Now on the website. Your details are sent to admissions@aviu.ac.ug (and can connect to REDES API when configured). Include nationality and preferred programme.' },
-  { icon: Upload, title: 'Send supporting documents', description: 'Email certified transcripts, ID/passport copy, photos and English test results (if required) to admissions@aviu.ac.ug or international@aviu.ac.ug.' },
-  { icon: CreditCard, title: 'Follow Admissions guidance', description: 'Fees and application charges are published as Coming Soon. Admissions will confirm any payment steps and next actions for your nationality and programme.' },
-  { icon: CheckCircle2, title: 'Receive your decision', description: 'Complete applications are typically reviewed within two weeks. You receive an offer letter by email. International students then proceed with visa support.' },
+  { icon: FileText, title: 'Create an Account', description: 'Register on our online application portal with your email address and create a password. You will receive a confirmation email to verify your account.' },
+  { icon: FileText, title: 'Complete the Application Form', description: 'Fill in your personal details, academic history, and chosen programme. You can save your progress and return to complete it later.' },
+  { icon: Upload, title: 'Upload Required Documents', description: 'Submit certified academic transcripts, passport photos, a copy of your ID or passport, and any other documents required for your programme.' },
+  { icon: CreditCard, title: 'Pay the Application Fee', description: 'Pay the non-refundable application fee via mobile money, bank transfer, or at the bursar\'s office. Your application is reviewed once payment is confirmed.' },
+  { icon: CheckCircle2, title: 'Receive Your Decision', description: 'The admissions team reviews your application within two weeks. You will receive your admission decision via email and can track your status online.' },
 ];
 
 export function HowToApply() {
@@ -20,7 +19,7 @@ export function HowToApply() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('admissions')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Application guide"
         title={<>How to <em>Apply</em></>}
         subtitle="Follow these five simple steps to submit your application to Avance International University. The entire process can be completed online."

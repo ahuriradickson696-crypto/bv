@@ -10,16 +10,4 @@ export default defineConfig({
     },
   },
   base: '/',
-  build: {
-    // Silence large-chunk warning on Vercel (common with full university sites)
-    chunkSizeWarningLimit: 2000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          icons: ['lucide-react'],
-        },
-      },
-    },
-  },
 });

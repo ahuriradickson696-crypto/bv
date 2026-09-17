@@ -1,6 +1,5 @@
 import { ArrowRight, Trophy, Users, Dumbbell } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -26,7 +25,7 @@ export function SportsRecreation() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('studentlife')}         images={pageImages.studentlife}
+        images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Sports &amp; <em>Recreation</em></>}
         subtitle="Stay active, make friends, and represent AVIU. Our sports teams, fitness facilities, and intramural leagues offer something for every student, from competitive athletes to casual participants."
@@ -95,7 +94,7 @@ videos={videosFor('studentlife')}         images={pageImages.studentlife}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88}  videos={videosFor('studentlife')} />
+        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Get active</div>
           <h2>Join a team or club.</h2>

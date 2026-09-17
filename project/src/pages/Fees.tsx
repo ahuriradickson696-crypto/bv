@@ -1,11 +1,12 @@
-import { ArrowRight, Clock, Mail } from 'lucide-react';
-import { feeStructure } from '@/data/university';
+import { ArrowRight, Check, CreditCard, FileText, Percent, RotateCcw } from 'lucide-react';
+import { feeStructure, feePaymentInfo } from '@/data/university';
 import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
+
+const paymentIcons = [CreditCard, FileText, Percent, RotateCcw];
 
 export function Fees() {
   const { navigate } = useRouter();
@@ -14,51 +15,29 @@ export function Fees() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('fees')}         images={pageImages.fees}
+        images={pageImages.fees}
         eyebrow="Tuition & costs"
-        title={
-          <>
-            Fees &amp; <em>Bursaries</em>
-          </>
-        }
-        subtitle="Detailed tuition fees and bursary information for Ugandan and international students is currently being updated. Contact Admissions for the latest guidance."
+        title={<>Fees &amp; <em>Payment</em></>}
+        subtitle="We are committed to providing affordable, quality education. Below is our fee structure and payment information to help you plan your studies at Avance International University."
       />
 
       <section className="section-pad">
-        <div
-          className="coming-soon-block"
-          style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto', padding: '40px 24px' }}
-        >
-          <Clock size={48} strokeWidth={1.5} style={{ color: 'var(--purple-500)', marginBottom: 16 }} />
-          <h2 style={{ marginBottom: 12 }}>
-            Coming <em>Soon</em>
-          </h2>
-          <p style={{ color: 'var(--ink-soft)', marginBottom: 20, lineHeight: 1.65 }}>
-            Fee schedules, payment plans, and bursary / scholarship details for all 25
-            NCHE-accredited programmes are under review. We will publish clear rates for East
-            African and international students as soon as they are confirmed.
-          </p>
-          <p style={{ color: 'var(--ink-muted)', marginBottom: 28 }}>
-            In the meantime, email <strong>admissions@aviu.ac.ug</strong> (or use Apply Now) with
-            your nationality and preferred programme — Admissions will advise on current costs
-            and any available support.
-          </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="button" onClick={() => openApply()}>
-              Apply / Enquire <ArrowRight size={17} />
-            </button>
-            <a className="button button-outline" href="mailto:admissions@aviu.ac.ug">
-              <Mail size={16} /> Email Admissions
-            </a>
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">
+              <span className="eyebrow-line" /> Fee structure
+            </div>
+            <h2>
+              Transparent <em>pricing.</em>
+            </h2>
           </div>
         </div>
-
-        <div className="tuition-table" style={{ marginTop: 40, opacity: 0.85 }}>
+        <div className="tuition-table">
           <div className="tuition-row tuition-header">
-            <span>Category</span>
-            <span>Ugandan / East African</span>
-            <span>International</span>
-            <span>Notes</span>
+            <span>Programme Type</span>
+            <span>East African Students</span>
+            <span>International Students</span>
+            <span>Frequency</span>
           </div>
           {feeStructure.map((row) => (
             <div className="tuition-row tuition-row-4" key={row.programme}>
@@ -69,22 +48,80 @@ videos={videosFor('fees')}         images={pageImages.fees}
             </div>
           ))}
         </div>
+        <p className="tuition-note">
+          Fees are indicative and subject to annual review. Flexible payment
+          plans and scholarships are available for qualifying students.
+        </p>
+      </section>
+
+      <section className="section-pad alt-bg">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">
+              <span className="eyebrow-line" /> Payment information
+            </div>
+            <h2>
+              Everything you need to <em>know.</em>
+            </h2>
+          </div>
+        </div>
+        <div className="payment-info-grid">
+          {feePaymentInfo.map((info, index) => {
+            const Icon = paymentIcons[index] || FileText;
+            return (
+              <article className="payment-info-card" key={info.title}>
+                <span className="payment-info-icon">
+                  <Icon size={22} strokeWidth={1.5} />
+                </span>
+                <strong>{info.title}</strong>
+                <p>{info.description}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section-pad">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">
+              <span className="eyebrow-line" /> Intake schedule
+            </div>
+            <h2>
+              Three intakes <em>per year.</em>
+            </h2>
+          </div>
+        </div>
+        <div className="intake-grid">
+          <div className="intake-card">
+            <strong>January</strong>
+            <span>Intake 1</span>
+            <p>Applications open in October of the previous year.</p>
+          </div>
+          <div className="intake-card">
+            <strong>May</strong>
+            <span>Intake 2</span>
+            <p>Applications open in February of the same year.</p>
+          </div>
+          <div className="intake-card intake-active">
+            <strong>August</strong>
+            <span>Intake 3</span>
+            <p>Applications open in May. Now accepting applications for 2026.</p>
+          </div>
+        </div>
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.fees} overlay={0.88}  videos={videosFor('fees')} />
+        <BackgroundCarousel images={pageImages.fees} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
-            <span className="eyebrow-line" /> International students
+            <span className="eyebrow-line" /> Ready to apply?
           </div>
-          <h2>Plan your studies with us.</h2>
-          <p>
-            Visa support, orientation and English-medium programmes. Ask Admissions about fees
-            for your country of origin.
-          </p>
+          <h2>Start your application.</h2>
+          <p>Applications are now open for all intakes — January, May, and August.</p>
         </div>
-        <button className="button button-light" onClick={() => navigate('/admissions/international')}>
-          International admissions <ArrowRight size={17} />
+        <button className="button button-light" onClick={openApply}>
+          Apply now <ArrowRight size={17} />
         </button>
       </section>
     </div>

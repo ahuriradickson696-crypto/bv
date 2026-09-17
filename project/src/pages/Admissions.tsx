@@ -4,10 +4,7 @@ import { PageHero } from '@/components/PageHero';
 import { admissionFAQs } from '@/data/university';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
-import { TikTokStrip } from '@/components/TikTokEmbed';
-import { tiktoksByCategory } from '@/data/galleryMedia';
 
 const steps = [
   {
@@ -39,11 +36,16 @@ const requirements = [
   'Application fee payment receipt',
   'Two letters of recommendation (postgraduate programmes)',
   'Proof of English proficiency (international applicants)',
-  'Curriculum vitae (for postgraduate applicants, where requested)',
-  'Research proposal (only if applying to a research pathway when available)',
+  'Curriculum vitae (for Masters and PhD applicants)',
+  'Research proposal (for PhD applicants)',
 ];
 
-const tuitionComingSoon = true;
+const tuition = [
+  { programme: 'Undergraduate Programmes', per: 'UGX 1,200,000', perLabel: 'per semester' },
+  { programme: 'Postgraduate Diplomas', per: 'UGX 1,800,000', perLabel: 'per semester' },
+  { programme: 'Diploma Programmes', per: 'UGX 800,000', perLabel: 'per semester' },
+  { programme: 'Certificate Programmes', per: 'UGX 500,000', perLabel: 'per semester' },
+];
 
 const intakes = [
   { name: 'January Intake', period: 'January - April', applications: 'October - December', status: 'Open Now' },
@@ -58,7 +60,7 @@ export function Admissions() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('admissions')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Join AVIU"
         title={<>Begin your <em>application.</em></>}
         subtitle="We welcome students from all backgrounds. Our admissions process is straightforward, transparent, and designed to help you find the right fit. We offer three intakes per year: January, May, and August."
@@ -149,15 +151,29 @@ videos={videosFor('admissions')}         images={pageImages.admissions}
               <span className="eyebrow-line" /> Tuition &amp; fees
             </div>
             <h2>
-              Fee schedule <em>coming soon.</em>
+              An affordable <em>education.</em>
             </h2>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: 640, marginTop: 12, lineHeight: 1.7 }}>
-              Detailed tuition, payment plans and any bursary information will be published here once
-              confirmed by the University. Contact admissions@aviu.ac.ug or +256 700 670 691 for the
-              latest guidance for your programme and intake.
-            </p>
           </div>
         </div>
+        <div className="tuition-table">
+          <div className="tuition-row tuition-header">
+            <span>Programme Type</span>
+            <span>Tuition</span>
+            <span>Frequency</span>
+          </div>
+          {tuition.map((row) => (
+            <div className="tuition-row" key={row.programme}>
+              <span>{row.programme}</span>
+              <strong>{row.per}</strong>
+              <span>{row.perLabel}</span>
+            </div>
+          ))}
+        </div>
+        <p className="tuition-note">
+          Fees are indicative and subject to annual review. Flexible payment
+          plans and scholarships are available for qualifying students. See our
+          full fee structure on the Fees page.
+        </p>
       </section>
 
       <section className="section-pad">
@@ -191,14 +207,8 @@ videos={videosFor('admissions')}         images={pageImages.admissions}
         </div>
       </section>
 
-      <TikTokStrip
-        items={tiktoksByCategory('admissions')}
-        title={<>Welcome &amp; <em>admissions</em> videos.</>}
-        subtitle="Freshers welcome, education pathways, nursing intakes — from @avance.marketing and student pulse."
-      />
-
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Take the first step

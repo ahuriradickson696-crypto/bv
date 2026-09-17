@@ -1,6 +1,5 @@
 import { ArrowRight, Building2, Home, CheckCircle2 } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -16,7 +15,7 @@ export function Accommodation() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('studentlife')}         images={pageImages.studentlife}
+        images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Accommodation &amp; <em>Housing</em></>}
         subtitle="Finding the right place to live is an important part of your university experience. AVIU offers on-campus halls of residence and supports students in finding suitable off-campus housing."
@@ -71,7 +70,7 @@ videos={videosFor('studentlife')}         images={pageImages.studentlife}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88}  videos={videosFor('studentlife')} />
+        <BackgroundCarousel images={pageImages.studentlife} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Housing</div>
           <h2>Find your home at AVIU.</h2>

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aviu.ac.ug/sitemap.xml

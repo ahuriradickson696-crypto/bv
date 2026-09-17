@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -11,7 +10,7 @@ const requirements = [
   { level: 'Bachelor\'s Degrees', items: ['A-Level certificate (UACE) with at least 2 principal passes', 'Or an equivalent qualification from a recognised institution', 'Diploma holders may apply with credit transfer'] },
   { level: 'Postgraduate Diplomas', items: ['A recognised bachelor\'s degree', 'Relevant work experience (where applicable)', 'Professional qualifications may be considered'] },
   { level: 'Master\'s Degrees', items: ['A recognised bachelor\'s degree with at least a second class (lower)', 'Relevant work experience (preferred for MBA)', 'Two academic or professional references'] },
-  { level: 'PhD Programmes', items: ['Coming Soon — doctoral programmes are being prepared', 'Register interest via Research → PhD Opportunities or admissions@aviu.ac.ug'] },
+  { level: 'PhD Programmes', items: ['A recognised master\'s degree in a relevant field', 'A research proposal (2,000-3,000 words)', 'Identification of a potential supervisor', 'Two academic references'] },
 ];
 
 const alternativeEntry = [
@@ -26,7 +25,7 @@ export function EntryRequirements() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('admissions')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Admissions"
         title={<>Entry <em>Requirements</em></>}
         subtitle="Find the academic qualifications needed for each programme level. AVIU offers multiple entry pathways to ensure education is accessible to all qualified applicants."
@@ -82,7 +81,7 @@ videos={videosFor('admissions')}         images={pageImages.admissions}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Ready?</div>
           <h2>Check your eligibility.</h2>

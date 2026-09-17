@@ -5,10 +5,9 @@ import { PageHero } from '@/components/PageHero';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
-import { videosFor } from '@/data/pageVideos';
 import { useApply } from '@/components/ApplyContext';
 
-const levelFilters = ['All', 'Certificate', 'Diploma', 'Bachelor', 'Postgraduate Diploma', 'Masters'] as const;
+const levelFilters = ['All', 'Certificate', 'Diploma', 'Bachelor', 'Postgraduate Diploma', 'Masters', 'PhD'] as const;
 
 export function Study() {
   const { navigate } = useRouter();
@@ -28,39 +27,13 @@ export function Study() {
   return (
     <div className="page-content">
       <PageHero
-videos={videosFor('study')}         images={pageImages.study}
+        images={pageImages.study}
         eyebrow="Academics"
         title={<>Study at <em>Avance</em></>}
-        subtitle="Browse our full NCHE-accredited catalogue. AVIU delivers Certificate, Diploma, Bachelor, Postgraduate Diploma and Masters pathways across Education, Business, Computing and Health Sciences — with clear entry routes, teaching practice and industry links. PhD programmes are coming soon and are not listed here yet."
+        subtitle="From education to alternative medicine, our programmes combine research-oriented teaching with hands-on practice to prepare you for the world of work. We offer Certificate, Diploma, Bachelor, Postgraduate Diploma, and Masters level qualifications across four faculties."
       />
 
       <section className="section-pad">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">
-              <span className="eyebrow-line" /> Overview
-            </div>
-            <h2>What you can <em>study</em> at AVIU.</h2>
-            <p style={{ color: 'var(--ink-soft)', maxWidth: 720, lineHeight: 1.7, marginTop: 12 }}>
-              Avance International University is a chartered private university in Nabweru, Wakiso (Uganda).
-              Our teaching model blends classroom learning, laboratories, school practice (for education),
-              clinical/practical hours (for health-related fields) and continuous assessment. All 25 listed
-              bachelor programmes are accredited by the National Council for Higher Education (NCHE).
-              International applicants follow the same academic standards with additional visa and document
-              support from Admissions. Intakes run in January, May, August and September; graduation is held
-              every year on 25 September.
-            </p>
-            <ul style={{ color: 'var(--ink-soft)', lineHeight: 1.8, marginTop: 12, paddingLeft: 18 }}>
-              <li><strong>Certificate &amp; Diploma</strong> — foundation and intermediate skills pathways (where offered under faculty structures).</li>
-              <li><strong>Bachelor (undergraduate)</strong> — primary NCHE-accredited degree catalogue (25 programmes).</li>
-              <li><strong>Postgraduate Diploma &amp; Masters</strong> — advanced study routes; confirm availability with Admissions for your intake.</li>
-              <li><strong>PhD</strong> — Coming Soon (not open for enrolment on this site).</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad alt-bg">
         <div className="section-heading">
           <div>
             <div className="eyebrow">
@@ -169,7 +142,7 @@ videos={videosFor('study')}         images={pageImages.study}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.study} overlay={0.88}  videos={videosFor('study')} />
+        <BackgroundCarousel images={pageImages.study} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light">
             <span className="eyebrow-line" /> Ready to apply?

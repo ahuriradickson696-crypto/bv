@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle2, FileText } from 'lucide-react';
 import { SubPageHero } from '@/components/SubPageHero';
-import { videosFor } from '@/data/pageVideos';
 import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
@@ -26,7 +25,7 @@ export function CreditTransfer() {
   return (
     <div className="page-content">
       <SubPageHero
-videos={videosFor('admissions')}         images={pageImages.admissions}
+        images={pageImages.admissions}
         eyebrow="Admissions"
         title={<>Credit Transfer &amp; <em>RPL</em></>}
         subtitle="If you have prior qualifications or work experience, you may be eligible for credit transfer or recognition of prior learning, reducing the time and cost of your studies."
@@ -69,7 +68,7 @@ videos={videosFor('admissions')}         images={pageImages.admissions}
       </section>
 
       <section className="cta-section">
-        <BackgroundCarousel images={pageImages.admissions} overlay={0.88}  videos={videosFor('admissions')} />
+        <BackgroundCarousel images={pageImages.admissions} overlay={0.88} />
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Transfer?</div>
           <h2>Apply for credit transfer.</h2>

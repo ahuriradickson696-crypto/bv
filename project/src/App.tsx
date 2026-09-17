@@ -3,16 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplyProvider } from '@/components/ApplyContext';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { FloatingYouTube } from '@/components/FloatingYouTube';
-import { PwaInstall } from '@/components/PwaInstall';
-import { DocumentHead } from '@/components/DocumentHead';
-import { NotFound } from '@/pages/NotFound';
-import { Terms } from '@/pages/Terms';
-import { Cookies } from '@/pages/Cookies';
-import { Accessibility } from '@/pages/Accessibility';
-import { CookieConsent } from '@/components/CookieConsent';
-import { Analytics } from '@/components/Analytics';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { AutoPlayVideos } from '@/components/AutoPlayVideos';
 import { Home } from '@/pages/Home';
 import { Study } from '@/pages/Study';
 import { Admissions } from '@/pages/Admissions';
@@ -31,7 +22,6 @@ import { PostgraduateStudy } from '@/pages/study/PostgraduateStudy';
 import { OnlineLearning } from '@/pages/study/OnlineLearning';
 import { InternationalStudy } from '@/pages/study/InternationalStudy';
 import { CourseFinder } from '@/pages/study/CourseFinder';
-import { ProgrammeDetail } from '@/pages/study/ProgrammeDetail';
 
 import { HowToApply } from '@/pages/admissions/HowToApply';
 import { EntryRequirements } from '@/pages/admissions/EntryRequirements';
@@ -57,6 +47,7 @@ import { OrgChart } from '@/pages/about/OrgChart';
 
 import { Directory } from '@/pages/contact/Directory';
 import { CampusSafety } from '@/pages/contact/CampusSafety';
+import { ElearningApp } from '@/elearning/ElearningApp';
 import { Gallery } from '@/pages/Gallery';
 import { AcademicCalendar } from '@/pages/AcademicCalendar';
 import { Privacy } from '@/pages/Privacy';
@@ -153,49 +144,37 @@ function Routes() {
         return <AcademicCalendar />;
       case '/privacy':
         return <Privacy />;
-      case '/terms':
-        return <Terms />;
-      case '/cookies':
-        return <Cookies />;
-      case '/accessibility':
-        return <Accessibility />;
       case '/downloads':
         return <Downloads />;
 
+      case '/':
       default:
-        if (path.startsWith('/study/programme/')) {
-          return <ProgrammeDetail />;
-        }
-        if (path === '/') return <Home />;
-        return <NotFound />;
+        return <Home />;
     }
   };
 
+  if (path === '/elearning' || path.startsWith('/elearning/')) {
+    return <ElearningApp />;
+  }
+
   return (
     <div className="site-shell">
-      <DocumentHead />
-      <a href="#main-content" className="skip-to-content">Skip to main content</a>
       <Header />
-      <main id="main-content" className="main-content-area">{renderPage()}</main>
-      <FloatingYouTube />
-      <PwaInstall />
+      <main>{renderPage()}</main>
+      <AutoPlayVideos />
       <Footer />
       <WhatsAppButton />
-      <CookieConsent />
-      <Analytics />
     </div>
   );
 }
 
 function App() {
   return (
-    <ErrorBoundary>
-      <RouterProvider>
-        <ApplyProvider>
-          <Routes />
-        </ApplyProvider>
-      </RouterProvider>
-    </ErrorBoundary>
+    <RouterProvider>
+      <ApplyProvider>
+        <Routes />
+      </ApplyProvider>
+    </RouterProvider>
   );
 }
 
