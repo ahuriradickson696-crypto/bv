@@ -6,7 +6,7 @@ import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
 
 const visaSteps = [
-  { step: '1', title: 'Receive Offer Letter', description: 'Once admitted, AIU issues an official acceptance letter required for your visa application.' },
+  { step: '1', title: 'Receive Offer Letter', description: 'Once admitted, AVIU issues an official acceptance letter required for your visa application.' },
   { step: '2', title: 'Gather Documents', description: 'Prepare your passport, acceptance letter, proof of funds, health insurance, and passport photos.' },
   { step: '3', title: 'Apply for Student Visa', description: 'Submit your visa application at the Ugandan embassy or consulate in your country.' },
   { step: '4', title: 'Pre-Departure Briefing', description: 'Attend our online pre-departure briefing covering travel, accommodation, and arrival logistics.' },
@@ -30,7 +30,7 @@ export function InternationalAdmissions() {
         images={pageImages.admissions}
         eyebrow="International applicants"
         title={<>International <em>Admissions</em></>}
-        subtitle="AIU welcomes students from across East Africa and beyond. This guide covers everything international applicants need — from entry requirements to visa support and arrival orientation."
+        subtitle="AVIU welcomes students from across East Africa and beyond. This guide covers everything international applicants need — from entry requirements to visa support and arrival orientation."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Admissions', path: '/admissions' }, { label: 'International', path: '/admissions/international' }]}
       />
 
@@ -43,7 +43,7 @@ export function InternationalAdmissions() {
         </div>
         <div className="two-col-layout">
           <div className="col-half">
-            <p>AIU accepts a wide range of international qualifications. Below are common equivalencies. If your qualification is not listed, contact the international office for an individual assessment.</p>
+            <p>AVIU accepts a wide range of international qualifications. Below are common equivalencies. If your qualification is not listed, contact the international office for an individual assessment.</p>
           </div>
           <div className="col-half">
             <div className="calendar-key-dates">
@@ -132,6 +132,27 @@ export function InternationalAdmissions() {
             </div>
           </div>
         </div>
+      </section>
+
+
+      <section className="section-pad">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow"><span className="eyebrow-line" /> Documents checklist</div>
+            <h2>What international applicants should <em>prepare.</em></h2>
+          </div>
+        </div>
+        <ul className="requirements-list">
+          <li><span className="check-bullet"><FileText size={16} /></span> Certified copies of secondary school certificates and transcripts (with English translation if needed)</li>
+          <li><span className="check-bullet"><FileText size={16} /></span> Valid passport (minimum 6 months validity beyond intended stay)</li>
+          <li><span className="check-bullet"><FileText size={16} /></span> English proficiency evidence (IELTS / TOEFL / PTE) or waiver request if prior study was in English</li>
+          <li><span className="check-bullet"><FileText size={16} /></span> Passport-size photographs</li>
+          <li><span className="check-bullet"><FileText size={16} /></span> Personal statement (recommended)</li>
+          <li><span className="check-bullet"><FileText size={16} /></span> After offer: proof of funds and medical insurance for visa application</li>
+        </ul>
+        <p style={{ marginTop: 20, color: 'var(--ink-muted)', fontSize: 14 }}>
+          Email international@aviu.ac.ug or admissions@aviu.ac.ug with scanned documents after submitting the online enquiry. Fees information is Coming Soon — request a quote for your programme and nationality.
+        </p>
       </section>
 
       <section className="cta-section">

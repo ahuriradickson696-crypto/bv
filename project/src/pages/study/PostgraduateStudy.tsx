@@ -80,38 +80,15 @@ export function PostgraduateStudy() {
             <h2>PhD &amp; <em>professional doctorates.</em></h2>
           </div>
         </div>
-        <div className="two-col-layout">
-          <div className="col-half">
-            <p>AIU offers PhD programmes by research across all four faculties. Doctoral candidates work under the supervision of experienced faculty members and contribute to the university's growing research output. The PhD typically takes 3-4 years of full-time study or 4-6 years part-time.</p>
-            <p>Candidates are expected to produce an original thesis that makes a significant contribution to knowledge in their field. The university also supports professional doctorates (DBA, EdD) for senior practitioners.</p>
-            <a className="text-link" onClick={(e) => { e.preventDefault(); navigate('/research'); }}>
-              Explore research centres <ArrowRight size={16} />
-            </a>
-          </div>
-          <div className="col-half">
-            <div className="library-grid">
-              <div className="library-card">
-                <span className="library-icon"><Microscope size={24} strokeWidth={1.5} /></span>
-                <strong>Find a Supervisor</strong>
-                <p>Browse our researcher directory to find faculty members whose expertise aligns with your research interests.</p>
-              </div>
-              <div className="library-card">
-                <span className="library-icon"><Microscope size={24} strokeWidth={1.5} /></span>
-                <strong>Funded Studentships</strong>
-                <p>A limited number of funded PhD positions are available each year. Check the research page for current opportunities.</p>
-              </div>
-              <div className="library-card">
-                <span className="library-icon"><Microscope size={24} strokeWidth={1.5} /></span>
-                <strong>Proposal Guidelines</strong>
-                <p>Our research proposal writing guide helps you structure a compelling application for doctoral study.</p>
-              </div>
-              <div className="library-card">
-                <span className="library-icon"><Microscope size={24} strokeWidth={1.5} /></span>
-                <strong>Graduate Research School</strong>
-                <p>The Doctoral College provides training, funding support, and a vibrant community for research students.</p>
-              </div>
-            </div>
-          </div>
+        <div className="coming-soon-block" style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto', padding: '32px 24px' }}>
+          <Clock size={40} strokeWidth={1.5} style={{ color: 'var(--purple-500)', marginBottom: 12 }} />
+          <h3 style={{ marginBottom: 8 }}>Coming Soon</h3>
+          <p style={{ color: 'var(--ink-soft)', marginBottom: 20, lineHeight: 1.6 }}>
+            AVIU is preparing PhD programmes by research and professional doctorates. Details on supervisors, funded studentships, and applications will be announced here when enrolment opens.
+          </p>
+          <a className="text-link" onClick={(e) => { e.preventDefault(); navigate('/research/phd-opportunities'); }}>
+            View PhD opportunities page <ArrowRight size={16} />
+          </a>
         </div>
       </section>
 

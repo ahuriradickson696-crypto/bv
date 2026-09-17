@@ -10,27 +10,48 @@ const RouterContext = createContext<RouterContextType>({
   navigate: () => {},
 });
 
+function normalizePath(raw: string): string {
+  let p = raw.split('?')[0].split('#')[0] || '/';
+  if (!p.startsWith('/')) p = '/' + p;
+  if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+  return p || '/';
+}
+
+/** History API paths; migrates legacy hash URLs once. */
 export function RouterProvider({ children }: { children: ReactNode }) {
   const [path, setPath] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace(/^#/, '');
-      return hash || '/';
-    }
-    return '/';
+    if (typeof window === 'undefined') return '/';
+    const hash = window.location.hash.replace(/^#/, '');
+    if (hash && hash.startsWith('/')) return normalizePath(hash);
+    return normalizePath(window.location.pathname);
   });
 
   useEffect(() => {
-    const onHashChange = () => {
-      const hash = window.location.hash.replace(/^#/, '');
-      setPath(hash || '/');
+    const hash = window.location.hash.replace(/^#/, '');
+    if (hash && hash.startsWith('/')) {
+      const next = normalizePath(hash);
+      window.history.replaceState(null, '', next);
+      setPath(next);
+      window.scrollTo(0, 0);
+    }
+
+    const onPop = () => {
+      setPath(normalizePath(window.location.pathname));
       window.scrollTo(0, 0);
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
   }, []);
 
   const navigate = (to: string) => {
-    window.location.hash = to;
+    const next = normalizePath(to);
+    if (normalizePath(window.location.pathname) === next) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    window.history.pushState(null, '', next);
+    setPath(next);
+    window.scrollTo(0, 0);
   };
 
   return (

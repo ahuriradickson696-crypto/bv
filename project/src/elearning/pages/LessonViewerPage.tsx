@@ -108,7 +108,7 @@ export function LessonViewerPage({ navigate, courseSlug, lessonId }: LessonViewe
 
     // Auto-generate certificate when all lessons are completed
     if (!isCompleted && newCompleted.size === lessons.length && lessons.length > 0) {
-      const certNumber = `AIU-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+      const certNumber = `AVIU-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
       await supabase
         .from('certificates')
         .upsert({

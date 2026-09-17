@@ -8,12 +8,12 @@ import { useApply } from '@/components/ApplyContext';
 const pathwayProgrammes = [
   { icon: GraduationCap, title: 'International Foundation Year (IFY)', description: 'A one-year preparatory programme for international students whose qualifications do not meet direct entry requirements. Builds academic English, study skills, and subject knowledge.' },
   { icon: FileText, title: 'Pre-Sessional English', description: 'Intensive English language preparation courses for students who need to meet English proficiency requirements before beginning their degree programme.' },
-  { icon: GraduationCap, title: 'Pre-Master\'s Bridging Programme', description: 'A bridging programme for students who hold a bachelor\'s degree but need additional preparation before starting a master\'s degree at AIU.' },
+  { icon: GraduationCap, title: 'Pre-Master\'s Bridging Programme', description: 'A bridging programme for students who hold a bachelor\'s degree but need additional preparation before starting a master\'s degree at AVIU.' },
 ];
 
 const exchangeInfo = [
-  { icon: Plane, title: 'Inbound Exchange', description: 'Students from our partner universities abroad can spend a semester or year at AIU. We provide orientation, accommodation support, and a dedicated academic advisor.' },
-  { icon: Globe2, title: 'Outbound Exchange', description: 'AIU students can study at partner universities across East Africa and beyond. Exchange credits count toward your AIU degree. Applications open each semester.' },
+  { icon: Plane, title: 'Inbound Exchange', description: 'Students from our partner universities abroad can spend a semester or year at AVIU. We provide orientation, accommodation support, and a dedicated academic advisor.' },
+  { icon: Globe2, title: 'Outbound Exchange', description: 'AVIU students can study at partner universities across East Africa and beyond. Exchange credits count toward your AVIU degree. Applications open each semester.' },
 ];
 
 export function InternationalStudy() {
@@ -26,7 +26,7 @@ export function InternationalStudy() {
         images={pageImages.study}
         eyebrow="International"
         title={<>International <em>Study Options</em></>}
-        subtitle="AIU welcomes students from across East Africa and the world. Explore study abroad opportunities, exchange programmes, and pathway courses designed for international applicants."
+        subtitle="AVIU welcomes students from across East Africa and the world. Explore study abroad opportunities, exchange programmes, and pathway courses designed for international applicants."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Study', path: '/study' }, { label: 'International', path: '/study/international' }]}
       />
 
@@ -112,7 +112,7 @@ export function InternationalStudy() {
         <div>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Study abroad</div>
           <h2>Join our international community.</h2>
-          <p>Students from across the region choose AIU for quality education in a welcoming environment.</p>
+          <p>Students from across the region choose AVIU for quality education in a welcoming environment.</p>
         </div>
         <button className="button button-light" onClick={openApply}>Apply now <ArrowRight size={17} /></button>
       </section>

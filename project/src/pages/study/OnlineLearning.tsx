@@ -79,7 +79,7 @@ export function OnlineLearning() {
           <div className="col-half">
             <div className="eyebrow"><span className="eyebrow-line" /> E-Learning platform</div>
             <h2>Our virtual <em>classroom.</em></h2>
-            <p>AIU's technology-enhanced learning platform brings the classroom to you. With over 3 million video lessons and 2,500+ daily live classes, our e-learning system is designed for engagement, accessibility, and academic rigour.</p>
+            <p>AVIU's technology-enhanced learning platform brings the classroom to you. With over 3 million video lessons and 2,500+ daily live classes, our e-learning system is designed for engagement, accessibility, and academic rigour.</p>
             <p>Students need a reliable internet connection, a computer or tablet, and a quiet study space. Our IT helpdesk provides onboarding support for all new online learners.</p>
             <a className="text-link" onClick={(e) => { e.preventDefault(); navigate('/library'); }}>
               Explore library resources <ArrowRight size={16} />

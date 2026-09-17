@@ -24,7 +24,7 @@ export function Publications() {
         images={pageImages.research}
         eyebrow="Research"
         title={<>Publications &amp; <em>Repository</em></>}
-        subtitle="Explore the research output of AIU faculty and postgraduate students. Our institutional repository provides open access to theses, dissertations, journal articles, and conference papers."
+        subtitle="Explore the research output of AVIU faculty and postgraduate students. Our institutional repository provides open access to theses, dissertations, journal articles, and conference papers."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Research', path: '/research' }, { label: 'Publications', path: '/research/publications' }]}
       />
 
@@ -65,7 +65,7 @@ export function Publications() {
           <div className="library-card">
             <span className="library-icon"><Microscope size={24} strokeWidth={1.5} /></span>
             <strong>Open Access Repository</strong>
-            <p>Browse all AIU research outputs including theses, dissertations, and published papers. Free and open to all.</p>
+            <p>Browse all AVIU research outputs including theses, dissertations, and published papers. Free and open to all.</p>
           </div>
           <div className="library-card">
             <span className="library-icon"><FileText size={24} strokeWidth={1.5} /></span>
@@ -75,7 +75,7 @@ export function Publications() {
           <div className="library-card">
             <span className="library-icon"><BookOpen size={24} strokeWidth={1.5} /></span>
             <strong>Faculty Journals</strong>
-            <p>AIU-affiliated academic journals published in partnership with regional research bodies.</p>
+            <p>AVIU-affiliated academic journals published in partnership with regional research bodies.</p>
           </div>
           <div className="library-card">
             <span className="library-icon"><FileText size={24} strokeWidth={1.5} /></span>

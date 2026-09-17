@@ -170,7 +170,7 @@ export function Contact() {
               office directly.
             </p>
             <button className="button button-primary" onClick={openApply}>
-              Apply to AIU <ArrowRight size={17} />
+              Apply to AVIU <ArrowRight size={17} />
             </button>
           </div>
           <div className="col-half">

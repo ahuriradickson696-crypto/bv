@@ -100,7 +100,7 @@ export function Home() {
               <span className="play">
                 <Play size={13} fill="currentColor" />
               </span>
-              See AIU in action
+              See AVIU in action
             </a>
           </div>
           <div className="hero-note">
@@ -134,7 +134,6 @@ export function Home() {
       </section>
 
       <section className="stats-strip">
-        <BackgroundCarousel images={pageImages.home} overlay={0.9} />
         {homeStats.map((stat) => (
           <div className="stat-item" key={stat.label}>
             <stat.icon size={22} strokeWidth={1.5} />
@@ -164,7 +163,7 @@ export function Home() {
               navigate('/about');
             }}
           >
-            Discover the AIU experience <ArrowRight size={16} />
+            Discover the AVIU experience <ArrowRight size={16} />
           </a>
         </div>
         <div className="feature-grid">
@@ -315,7 +314,7 @@ export function Home() {
               <span className="eyebrow-line" /> Latest news
             </div>
             <h2>
-              What's happening at <em>AIU.</em>
+              What's happening at <em>AVIU.</em>
             </h2>
           </div>
           <a

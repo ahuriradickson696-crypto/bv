@@ -121,7 +121,7 @@ export function StudentLife() {
 
       <section className="section-pad alt-bg">
         <div className="about-image-wrap banner-image">
-          <img src={sportsImage} alt="Sports and recreation at AIU" />
+          <img src={sportsImage} alt="Sports and recreation at AVIU" />
         </div>
       </section>
 

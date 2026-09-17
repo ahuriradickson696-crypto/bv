@@ -20,7 +20,7 @@ export function HealthWellbeing() {
         images={pageImages.studentlife}
         eyebrow="Student life"
         title={<>Health &amp; <em>Wellbeing</em></>}
-        subtitle="Your physical and mental wellbeing are priorities at AIU. We provide comprehensive health services, counselling, accessibility support, and wellness programmes to help you thrive."
+        subtitle="Your physical and mental wellbeing are priorities at AVIU. We provide comprehensive health services, counselling, accessibility support, and wellness programmes to help you thrive."
         crumbs={[{ label: 'Home', path: '/' }, { label: 'Student Life', path: '/student-life' }, { label: 'Health & Wellbeing', path: '/student-life/health' }]}
       />
 
@@ -50,7 +50,7 @@ export function HealthWellbeing() {
           <div className="col-half">
             <div className="eyebrow"><span className="eyebrow-line" /> Health insurance</div>
             <h2>Stay <em>covered.</em></h2>
-            <p>All enrolled students are required to have health insurance. AIU offers an affordable student health insurance plan that covers clinic visits, emergency care, and hospitalisation.</p>
+            <p>All enrolled students are required to have health insurance. AVIU offers an affordable student health insurance plan that covers clinic visits, emergency care, and hospitalisation.</p>
             <p>International students must show proof of health insurance as part of their visa requirements. Our international office can assist with enrolment.</p>
           </div>
           <div className="col-half">

@@ -3,6 +3,15 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplyProvider } from '@/components/ApplyContext';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { AutoPlayVideos } from '@/components/AutoPlayVideos';
+import { DocumentHead } from '@/components/DocumentHead';
+import { NotFound } from '@/pages/NotFound';
+import { Terms } from '@/pages/Terms';
+import { Cookies } from '@/pages/Cookies';
+import { Accessibility } from '@/pages/Accessibility';
+import { CookieConsent } from '@/components/CookieConsent';
+import { Analytics } from '@/components/Analytics';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { Home } from '@/pages/Home';
 import { Study } from '@/pages/Study';
 import { Admissions } from '@/pages/Admissions';
@@ -21,6 +30,7 @@ import { PostgraduateStudy } from '@/pages/study/PostgraduateStudy';
 import { OnlineLearning } from '@/pages/study/OnlineLearning';
 import { InternationalStudy } from '@/pages/study/InternationalStudy';
 import { CourseFinder } from '@/pages/study/CourseFinder';
+import { ProgrammeDetail } from '@/pages/study/ProgrammeDetail';
 
 import { HowToApply } from '@/pages/admissions/HowToApply';
 import { EntryRequirements } from '@/pages/admissions/EntryRequirements';
@@ -143,12 +153,21 @@ function Routes() {
         return <AcademicCalendar />;
       case '/privacy':
         return <Privacy />;
+      case '/terms':
+        return <Terms />;
+      case '/cookies':
+        return <Cookies />;
+      case '/accessibility':
+        return <Accessibility />;
       case '/downloads':
         return <Downloads />;
 
-      case '/':
       default:
-        return <Home />;
+        if (path.startsWith('/study/programme/')) {
+          return <ProgrammeDetail />;
+        }
+        if (path === '/') return <Home />;
+        return <NotFound />;
     }
   };
 
@@ -158,21 +177,28 @@ function Routes() {
 
   return (
     <div className="site-shell">
+      <DocumentHead />
+      <a href="#main-content" className="skip-to-content">Skip to main content</a>
       <Header />
-      <main>{renderPage()}</main>
+      <main id="main-content">{renderPage()}</main>
+      <AutoPlayVideos />
       <Footer />
       <WhatsAppButton />
+      <CookieConsent />
+      <Analytics />
     </div>
   );
 }
 
 function App() {
   return (
-    <RouterProvider>
-      <ApplyProvider>
-        <Routes />
-      </ApplyProvider>
-    </RouterProvider>
+    <ErrorBoundary>
+      <RouterProvider>
+        <ApplyProvider>
+          <Routes />
+        </ApplyProvider>
+      </RouterProvider>
+    </ErrorBoundary>
   );
 }
 

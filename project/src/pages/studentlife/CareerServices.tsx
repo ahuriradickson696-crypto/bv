@@ -10,7 +10,7 @@ const careerServices = [
   { icon: Users, title: 'Internship Placement', description: 'Access our network of partner organisations for internships and work placements. Many lead to full-time job offers after graduation.' },
   { icon: BriefcaseBusiness, title: 'On-Campus Jobs', description: 'Work-study positions across campus in the library, IT helpdesk, administration, and academic departments. Earn while you learn.' },
   { icon: GraduationCap, title: 'Graduate Recruitment', description: 'Our annual graduate recruitment fair brings employers to campus. Network with companies hiring for entry-level and graduate roles.' },
-  { icon: Users, title: 'Alumni Mentorship', description: 'Connect with AIU alumni who can provide career advice, industry insights, and networking opportunities in your field.' },
+  { icon: Users, title: 'Alumni Mentorship', description: 'Connect with AVIU alumni who can provide career advice, industry insights, and networking opportunities in your field.' },
 ];
 
 export function CareerServices() {

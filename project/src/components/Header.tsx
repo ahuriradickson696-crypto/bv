@@ -6,35 +6,27 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { useApply } from '@/components/ApplyContext';
 
 const announcements = [
-  'Admissions for the January, May & August intakes are now open — apply today',
-  'Four faculties. Over 30 programmes. Find your path at AIU',
-  'Merit scholarships cover 25–50% of tuition for qualifying students',
-  'January 2027 intake orientation begins 10 January — welcome to AIU',
-  'Open Day for prospective students: 25 October 2026 — register now',
-  'AIU Innovation Fair 2026: 15 September — see student projects on display',
-  'Annual Research Conference: 5 October — faculty and postgraduate presentations',
-  'Student Startup Pitch Competition: 8 November — watch AIU entrepreneurs shine',
-  'Public Health Symposium: 15 November — tackling East African health challenges',
-  'Faculty of Nursing Graduation Ceremony: 20 September',
-  'Faculty of Education Graduation Ceremony: 5 December',
-  '85% graduate employment rate within six months of finishing',
-  '3M+ video lessons available on-demand through our e-learning platform',
-  '2,500+ daily live classes with interactive participation',
-  'Flexible payment plans: pay in 2–3 instalments per semester, no interest',
-  'International students from across East Africa and beyond — visa support provided',
-  'Minimum IELTS 6.0, TOEFL 80, or PTE 50 for international applicants',
-  'Credit transfer available — up to 50% of programme credits from prior study',
-  'Recognition of Prior Learning (RPL): turn work experience into academic credit',
-  'On-campus halls of residence with Wi-Fi, utilities, and 24/7 security included',
-  '20+ student clubs and societies — from debate to drama to football',
-  'Free airport pickup for new international students on designated dates',
-  'Innovation Centre with modern labs and prototyping equipment — open to all students',
-  'Advanced nursing simulation lab with high-fidelity patient manikins',
-  'Community Engagement Day: 12 October — giving back to Kampala',
-  'Mature Age Entry Scheme available for applicants aged 21 and above',
-  'Early-bird discount: 10% off tuition when you pay 30 days before the semester starts',
-  '2,000+ alumni across 12 regional chapters in East Africa and beyond',
-  'ASIC accredited · ISO 9001:2015 · THE Impact Rankings · Pearson Edexcel',
+  '🎓 AVIU Annual Graduation — every 25 September. All faculties. Families & international guests welcome',
+  'Admissions open: January · May · August · September intakes — Apply Now',
+  '25 NCHE-accredited bachelor programmes only — search & download the full catalogue',
+  'International students: visa guidance, free airport pickup & English-medium instruction',
+  'Faculty of Education · Business · Computing & IT · Nursing & Health · Arts & Social Sciences',
+  'AVIU Innovation Fair 2026: 15 September — student projects on display',
+  'Open Day for prospective & international students: 25 October 2026 — register now',
+  'Annual Research Conference: 5 October — faculty and student presentations',
+  'Student Startup Pitch Competition: 8 November — entrepreneurs of East Africa',
+  'Community Engagement Day: 12 October — service across Kampala & Wakiso',
+  'Nursing simulation lab open for clinical skills practice — School of Nursing & Health Sciences',
+  'IELTS 6.0 / TOEFL 80 / PTE 50 accepted for international admission',
+  'Credit transfer & Recognition of Prior Learning (RPL) available — up to 50% of credits',
+  'On-campus residence with Wi-Fi, utilities & 24/7 security — enquire early',
+  '20+ student clubs: debate, drama, football, innovation, peer mentoring',
+  'Free airport pickup for new international students on designated intake dates',
+  'Fees & bursaries: Coming Soon — contact admissions@aviu.ac.ug for guidance',
+  '2,000+ students · 100+ faculty · NCHE · ASIC · ISO 9001:2015',
+  'Mature Age Entry Scheme for applicants aged 21 and above',
+  'E-learning platform with live classes and on-demand lessons for flexible study',
+  'Apply online — enquiries go directly to Admissions (admissions@aviu.ac.ug)',
 ];
 
 type NavGroup = {
@@ -92,12 +84,12 @@ const navGroups: NavGroup[] = [
   {
     label: 'About',
     items: [
-      { label: 'About AIU', path: '/about' },
+      { label: 'About AVIU', path: '/about' },
       { label: 'Leadership & Governance', path: '/about/leadership' },
       { label: 'University Organisation', path: '/about/organisation' },
       { label: 'Campus & Visitor Info', path: '/about/campus' },
       { label: 'Alumni & Donors', path: '/about/alumni' },
-      { label: 'Careers at AIU', path: '/about/careers' },
+      { label: 'Careers at AVIU', path: '/about/careers' },
       { label: 'Staff Directory', path: '/staff' },
       { label: 'Gallery', path: '/gallery' },
       { label: 'Academic Calendar', path: '/academic-calendar' },
@@ -234,7 +226,7 @@ export function Header() {
             E-Learning Portal
           </a>
           <button className="nav-apply mobile-apply" onClick={openApply}>
-            Apply to AIU
+            Apply to AVIU
           </button>
         </nav>
         <div className="header-actions">
@@ -255,7 +247,7 @@ export function Header() {
             E-Learning
           </a>
           <button className="nav-apply" onClick={openApply}>
-            Apply to AIU
+            Apply to AVIU
           </button>
           <button
             className="menu-button"
