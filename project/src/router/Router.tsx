@@ -26,31 +26,51 @@ function normalizePath(raw: string): string {
 function readLocationPath(): string {
   if (typeof window === 'undefined') return '/';
   const hash = window.location.hash.replace(/^#/, '');
-  // Legacy hash routes: example.com/#/study
   if (hash && hash.startsWith('/')) return normalizePath(hash);
   return normalizePath(window.location.pathname);
 }
 
-/**
- * History API router with legacy hash support (from original site).
- * Ensures Study, Admissions, etc. always navigate correctly on mobile & desktop.
- */
+/** Instant scroll to top-left — no smooth scroll, no horizontal drift */
+function resetScroll() {
+  if (typeof window === 'undefined') return;
+  const html = document.documentElement;
+  const body = document.body;
+  const prevHtml = html.style.scrollBehavior;
+  const prevBody = body.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
+  body.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  html.scrollTop = 0;
+  body.scrollTop = 0;
+  html.scrollLeft = 0;
+  body.scrollLeft = 0;
+  const main = document.getElementById('main-content');
+  if (main) {
+    main.scrollTop = 0;
+    main.scrollLeft = 0;
+  }
+  // restore after paint
+  requestAnimationFrame(() => {
+    html.style.scrollBehavior = prevHtml;
+    body.style.scrollBehavior = prevBody;
+  });
+}
+
 export function RouterProvider({ children }: { children: ReactNode }) {
   const [path, setPath] = useState(readLocationPath);
 
   useEffect(() => {
-    // Migrate #/path → /path once
     const hash = window.location.hash.replace(/^#/, '');
     if (hash && hash.startsWith('/')) {
       const next = normalizePath(hash);
       window.history.replaceState(null, '', next);
       setPath(next);
-      window.scrollTo(0, 0);
+      resetScroll();
     }
 
     const onPop = () => {
       setPath(readLocationPath());
-      window.scrollTo(0, 0);
+      resetScroll();
     };
     const onHash = () => {
       const h = window.location.hash.replace(/^#/, '');
@@ -58,7 +78,7 @@ export function RouterProvider({ children }: { children: ReactNode }) {
         const next = normalizePath(h);
         window.history.replaceState(null, '', next);
         setPath(next);
-        window.scrollTo(0, 0);
+        resetScroll();
       }
     };
     window.addEventListener('popstate', onPop);
@@ -69,15 +89,19 @@ export function RouterProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Reset scroll whenever path changes (including first paint of a route)
+  useEffect(() => {
+    resetScroll();
+  }, [path]);
+
   const navigate = (to: string) => {
     const next = normalizePath(to);
-    window.history.pushState(null, '', next);
-    setPath(next);
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      const main = document.getElementById('main-content');
-      if (main) main.scrollIntoView({ block: 'start', behavior: 'auto' });
-    });
+    if (readLocationPath() !== next) {
+      window.history.pushState(null, '', next);
+      setPath(next);
+    } else {
+      resetScroll();
+    }
   };
 
   return (

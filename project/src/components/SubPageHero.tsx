@@ -1,8 +1,7 @@
 import { type ReactNode } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useRouter } from '@/router/Router';
-import { BackgroundCarousel } from '@/components/BackgroundCarousel';
-import { defaultPageVideos } from '@/data/pageVideos';
+import { AVIU_VIDEOS, youtubeBgSrc } from '@/data/pageVideos';
 
 type Crumb = { label: string; path: string };
 
@@ -12,8 +11,6 @@ export function SubPageHero({
   subtitle,
   crumbs,
   children,
-  images,
-  videos,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -24,38 +21,38 @@ export function SubPageHero({
   videos?: string[];
 }) {
   const { navigate } = useRouter();
+  const bgId = AVIU_VIDEOS.installation;
 
   return (
-    <section className="page-hero">
-      <BackgroundCarousel images={images} videos={videos && videos.length ? videos : defaultPageVideos} overlay={0.8} />
-      <div className="page-hero-inner">
-        <nav className="breadcrumb">
+    <section className="page-hero-safe">
+      <div className="page-hero-safe-bg" aria-hidden="true">
+        <iframe
+          src={youtubeBgSrc(bgId)}
+          title=""
+          allow="autoplay; encrypted-media"
+          tabIndex={-1}
+        />
+        <div className="page-hero-safe-shade" />
+      </div>
+      <div className="page-hero-safe-content">
+        <nav className="page-hero-safe-crumbs" aria-label="Breadcrumb">
           {crumbs.map((crumb, i) => (
-            <span key={crumb.path} className="breadcrumb-item">
+            <span key={crumb.path}>
               {i > 0 && <ChevronRight size={12} />}
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate(crumb.path);
-                }}
-                className={i === crumbs.length - 1 ? 'breadcrumb-current' : ''}
+              <button
+                type="button"
+                className={i === crumbs.length - 1 ? 'is-current' : ''}
+                onClick={() => navigate(crumb.path)}
               >
                 {crumb.label}
-              </a>
+              </button>
             </span>
           ))}
         </nav>
-        <div className="eyebrow" style={{ marginTop: '12px' }}>
-          <span className="eyebrow-line" /> {eyebrow}
-        </div>
-        <h1>{title}</h1>
-        {subtitle && <p className="page-hero-text">{subtitle}</p>}
+        <p className="page-hero-safe-eyebrow">{eyebrow}</p>
+        <h1 className="page-hero-safe-title">{title}</h1>
+        {subtitle ? <p className="page-hero-safe-sub">{subtitle}</p> : null}
         {children}
-      </div>
-      <div className="page-hero-deco" aria-hidden="true">
-        <span className="deco-circle deco-1" />
-        <span className="deco-circle deco-2" />
-        <span className="deco-circle deco-3" />
       </div>
     </section>
   );

@@ -61,26 +61,9 @@ import { Gallery } from '@/pages/Gallery';
 import { AcademicCalendar } from '@/pages/AcademicCalendar';
 import { Privacy } from '@/pages/Privacy';
 import { Downloads } from '@/pages/Downloads';
-import { ElearningApp } from '@/elearning/ElearningApp';
 
 function Routes() {
   const { path } = useRouter();
-
-  // The e-learning portal is a self-contained app with its own nav/footer —
-  // mount it directly instead of wrapping it in the main site chrome.
-  if (path === '/elearning' || path.startsWith('/elearning/')) {
-    return (
-      <div className="site-shell" style={{ maxWidth: "100vw", overflowX: "hidden" }}>
-        <DocumentHead />
-        <a href="#main-content" className="skip-to-content">Skip to main content</a>
-        <main id="main-content">
-          <ElearningApp />
-        </main>
-        <CookieConsent />
-        <Analytics />
-      </div>
-    );
-  }
 
   const renderPage = () => {
     switch (path) {
@@ -189,11 +172,11 @@ function Routes() {
   };
 
   return (
-    <div className="site-shell" style={{ maxWidth: "100vw", overflowX: "hidden" }}>
+    <div className="site-shell">
       <DocumentHead />
       <a href="#main-content" className="skip-to-content">Skip to main content</a>
       <Header />
-      <main id="main-content" style={{ minHeight: "50vh" }}>{renderPage()}</main>
+      <main id="main-content" className="main-content-area">{renderPage()}</main>
       <FloatingYouTube />
       <PwaInstall />
       <Footer />

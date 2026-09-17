@@ -1,82 +1,51 @@
 import { useState, useEffect, useCallback } from 'react';
-import { youtubeBgSrc } from '@/data/pageVideos';
 
 const defaultSlides = [
   '/images/campus-aviu-students-1.jpg',
   '/images/campus-aviu-event-1.jpg',
   '/images/campus-aviu-students-2.jpg',
-  '/images/campus-aviu-event-2.jpg',
-  '/images/campus-aviu-extra.jpg',
-  '/images/university-gate.jpg',
-  '/images/campus-aerial.jpg',
-  '/images/campus-building.jpg',
-  '/images/award-ceremony.jpg',
   '/images/graduation-ceremony.jpg',
+  '/images/campus-building.jpg',
+  '/images/university-gate.jpg',
 ];
 
 /**
- * Full-bleed background: prefers muted autoplay YouTube when `videos` is set;
- * falls back to image carousel.
+ * Contained image carousel for CTA bands only.
+ * Does NOT use video (videos are only in the top PageHero banner).
+ * Always clipped to its parent — never covers page text.
  */
 export function BackgroundCarousel({
   images,
-  videos,
   interval = 6000,
-  videoInterval = 40000,
-  overlay = 0.78,
+  overlay = 0.82,
 }: {
   images?: string[];
-  /** YouTube video IDs — play as background (muted, loop, no controls) */
-  videos?: string[];
+  videos?: string[]; // ignored — kept for call-site compatibility
   interval?: number;
   videoInterval?: number;
   overlay?: number;
 }) {
-  const useVideo = Boolean(videos && videos.length > 0);
-  const slides = images ?? defaultSlides;
-  const vids = videos ?? [];
+  const slides = images && images.length > 0 ? images : defaultSlides;
   const [current, setCurrent] = useState(0);
 
   const next = useCallback(() => {
-    setCurrent((c) => {
-      const len = useVideo ? vids.length : slides.length;
-      return len ? (c + 1) % len : 0;
-    });
-  }, [useVideo, vids.length, slides.length]);
+    setCurrent((c) => (c + 1) % slides.length);
+  }, [slides.length]);
 
   useEffect(() => {
-    const ms = useVideo ? videoInterval : interval;
-    const tick = setInterval(next, ms);
+    const tick = setInterval(next, interval);
     return () => clearInterval(tick);
-  }, [interval, videoInterval, next, useVideo]);
-
-  // Reset index when switching set
-  useEffect(() => {
-    setCurrent(0);
-  }, [useVideo, vids.join(','), slides.join(',')]);
+  }, [interval, next]);
 
   return (
-    <div className={`bg-carousel ${useVideo ? 'bg-carousel-video' : ''}`} aria-hidden="true">
-      {useVideo ? (
-        <div className="bg-video-wrap">
-          <iframe
-            key={vids[current % vids.length]}
-            className="bg-video-iframe"
-            src={youtubeBgSrc(vids[current % vids.length])}
-            title="Background video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen={false}
-          />
-        </div>
-      ) : (
-        slides.map((src, i) => (
-          <div
-            key={i}
-            className={`bg-carousel-slide ${i === current ? 'is-active' : ''}`}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))
-      )}
+    <div className="bg-carousel bg-carousel-contained" aria-hidden="true">
+      {slides.map((src, i) => (
+        <div
+          key={src + i}
+          className={`bg-carousel-slide ${i === current ? 'is-active' : ''}`}
+          style={{ backgroundImage: `url(${src})` }}
+        />
+      ))}
       <div
         className="bg-carousel-overlay"
         style={{

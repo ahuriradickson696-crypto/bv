@@ -4,7 +4,6 @@ import { universityInfo } from '@/data/university';
 import { useRouter } from '@/router/Router';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useApply } from '@/components/ApplyContext';
-import { setPendingSearch } from '@/lib/searchQuery';
 
 const announcements = [
   { text: 'Applications open — January, May, August & September intakes', image: '/images/admission-poster.jpeg' },
@@ -32,7 +31,6 @@ const navGroups: NavGroup[] = [
       { label: 'Online learning info', path: '/study/online' },
       { label: 'International Study', path: '/study/international' },
       { label: 'Course Finder', path: '/study/course-finder' },
-      { label: 'Student Portal (E-Learning)', path: '/elearning' },
       { label: 'Fees (Coming Soon)', path: '/fees' },
     ],
   },
@@ -103,7 +101,6 @@ export function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [announcementIndex, setAnnouncementIndex] = useState(0);
   const [currentDate, setCurrentDate] = useState('');
@@ -134,7 +131,12 @@ export function Header() {
   const go = useCallback((to: string) => {
     setMenuOpen(false);
     setOpenDropdown(null);
+    setSearchOpen(false);
     navigate(to);
+    // belt-and-suspenders scroll reset
+    window.scrollTo(0, 0);
+    document.documentElement.scrollLeft = 0;
+    document.body.scrollLeft = 0;
   }, [navigate]);
 
   const isActive = (group: NavGroup) =>
@@ -270,27 +272,14 @@ export function Header() {
         </div>
       </header>
       {searchOpen && (
-        <form
-          className="search-bar"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const term = searchTerm.trim();
-            setPendingSearch(term);
-            setSearchOpen(false);
-            setSearchTerm('');
-            go('/study/course-finder');
-          }}
-        >
+        <div className="search-bar">
           <input
             type="text"
             placeholder="Search programmes, research, news..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
             autoFocus
           />
-          <button type="submit">Search</button>
-          <button type="button" onClick={() => setSearchOpen(false)}>Close</button>
-        </form>
+          <button onClick={() => setSearchOpen(false)}>Close</button>
+        </div>
       )}
     </>
   );

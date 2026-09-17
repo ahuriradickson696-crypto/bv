@@ -1,14 +1,11 @@
 /* AVIU Progressive Web App — offline shell cache */
-const CACHE = 'aviu-shell-v2';
+const CACHE = 'aviu-shell-v1';
 const PRECACHE = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
   '/images/aviu-logo.png',
   '/images/aviu-logo-full.png',
-  '/images/icon-any-192.png',
-  '/images/icon-any-512.png',
-  '/images/icon-maskable-512.png',
 ];
 
 self.addEventListener('install', (event) => {

@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from '@/router/Router';
 
 const KEY = 'aviu_cookie_consent';
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
-  const { navigate } = useRouter();
 
   useEffect(() => {
     try {
@@ -20,11 +18,6 @@ export function CookieConsent() {
       localStorage.setItem(KEY, value);
       if (value === 'all' && typeof window !== 'undefined') {
         window.dispatchEvent(new CustomEvent('aviu-analytics-consent'));
-      }
-      if (typeof window !== 'undefined') {
-        // Lets other bottom-anchored UI (e.g. the PWA install bar) know it's
-        // now safe to appear without covering this banner.
-        window.dispatchEvent(new CustomEvent('aviu-cookie-consent-resolved'));
       }
     } catch {
       /* ignore */
@@ -59,19 +52,11 @@ export function CookieConsent() {
       <p style={{ margin: 0, fontSize: 14, maxWidth: 640, lineHeight: 1.5, opacity: 0.95 }}>
         We use essential cookies for site function. Optional analytics cookies help us improve the
         site if you accept. See our{' '}
-        <a
-          href="/privacy"
-          style={{ color: 'var(--gold-light, #e0c478)' }}
-          onClick={(e) => { e.preventDefault(); navigate('/privacy'); }}
-        >
+        <a href="/privacy" style={{ color: 'var(--gold-light, #e0c478)' }}>
           Privacy
         </a>{' '}
         and{' '}
-        <a
-          href="/cookies"
-          style={{ color: 'var(--gold-light, #e0c478)' }}
-          onClick={(e) => { e.preventDefault(); navigate('/cookies'); }}
-        >
+        <a href="/cookies" style={{ color: 'var(--gold-light, #e0c478)' }}>
           Cookie Policy
         </a>
         .

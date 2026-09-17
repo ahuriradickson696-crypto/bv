@@ -46,9 +46,6 @@ videos={videosFor('study')}         images={pageImages.study}
               Access live classes, video lessons, assignments, and your student dashboard on any device — including your phone.
             </p>
           </div>
-          <button type="button" className="btn-light" onClick={() => navigate('/elearning')}>
-            Open Student Portal <ArrowRight size={16} />
-          </button>
         </div>
       </section>
 

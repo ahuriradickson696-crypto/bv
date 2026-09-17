@@ -17,24 +17,14 @@ const titles: Record<string, string> = {
   '/admissions/scholarships': 'Scholarships (Coming Soon) | AVIU',
   '/admissions/campus-visits': 'Campus Visits | AVIU',
   '/research': 'Research | AVIU',
-  '/research/centres': 'Research Centres | AVIU',
   '/research/phd-opportunities': 'PhD Opportunities (Coming Soon) | AVIU',
-  '/research/publications': 'Publications & Repository | AVIU',
   '/student-life': 'Student Life | AVIU',
-  '/student-life/accommodation': 'Accommodation & Housing | AVIU',
-  '/student-life/health': 'Health & Wellbeing | AVIU',
-  '/student-life/sports': 'Sports & Recreation | AVIU',
-  '/student-life/careers': 'Career Services | AVIU',
   '/about': 'About AVIU',
   '/about/leadership': 'Leadership & Governance | AVIU',
   '/about/campus': 'Campus | AVIU',
-  '/about/alumni': 'Alumni & Donors | AVIU',
-  '/about/careers': 'Careers at AVIU',
-  '/about/organisation': 'University Organisation | AVIU',
+  '/about/alumni': 'Alumni | AVIU',
   '/fees': 'Fees (Coming Soon) | AVIU',
   '/contact': 'Contact | AVIU',
-  '/contact/directory': 'Staff & Department Directory | AVIU',
-  '/contact/campus-safety': 'Campus Safety | AVIU',
   '/news': 'News | AVIU',
   '/events': 'Events | AVIU',
   '/gallery': 'Gallery | AVIU',
@@ -61,17 +51,11 @@ export function DocumentHead() {
   useEffect(() => {
     const base = 'Avance International University — Enhancing Innovations';
     if (path.startsWith('/study/programme/')) return; // handled by ProgrammeDetail
-    if (path.startsWith('/elearning')) {
-      document.title = 'E-Learning Portal | AVIU';
-    } else {
-      document.title = titles[path] || base;
-    }
+    document.title = titles[path] || base;
 
     const content =
       descriptions[path] ||
-      (path.startsWith('/elearning')
-        ? 'Access live classes, video lessons, assignments and your student dashboard from the AVIU e-learning portal.'
-        : 'Avance International University (AVIU) is a private NCHE-accredited university in Uganda offering bachelor programmes for local and international students.');
+      'Avance International University (AVIU) is a private NCHE-accredited university in Uganda offering bachelor programmes for local and international students.';
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');

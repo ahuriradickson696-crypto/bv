@@ -27,7 +27,7 @@ function loadPos(): Pos {
 export function FloatingYouTube() {
   const [pos, setPos] = useState<Pos>(loadPos);
   const [muted, setMuted] = useState(true);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [active, setActive] = useState(0);
   const [hidden, setHidden] = useState(false);
   const dragging = useRef(false);

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Download, X } from 'lucide-react';
 
 type BeforeInstallPromptEvent = Event & {
@@ -14,8 +14,6 @@ export function PwaInstall() {
   const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
   const [isIos, setIsIos] = useState(false);
-  const deferredRef = useRef<BeforeInstallPromptEvent | null>(null);
-  const isIosRef = useRef(false);
 
   useEffect(() => {
     const ua = navigator.userAgent;
@@ -27,48 +25,24 @@ export function PwaInstall() {
     if (standalone) return;
 
     setIsIos(ios);
-    isIosRef.current = ios;
-
-    // Both this bar and the cookie-consent banner are fixed to the bottom of the
-    // screen. Never show this one until the person has answered the cookie
-    // banner, so the two never stack on top of each other.
-    const hasCookieDecision = () => {
-      try {
-        return Boolean(localStorage.getItem('aviu_cookie_consent'));
-      } catch {
-        return true; // storage unavailable: don't block the prompt forever
-      }
-    };
-
-    let iosTimer: number | undefined;
-    const armIosTip = () => {
-      if (iosTimer) return;
-      iosTimer = window.setTimeout(() => {
-        if (hasCookieDecision()) setVisible(true);
-      }, 4000);
-    };
 
     const onBip = (e: Event) => {
       e.preventDefault();
-      deferredRef.current = e as BeforeInstallPromptEvent;
-      setDeferred(deferredRef.current);
-      if (hasCookieDecision()) setVisible(true);
+      setDeferred(e as BeforeInstallPromptEvent);
+      setVisible(true);
     };
     window.addEventListener('beforeinstallprompt', onBip);
 
-    const onCookieDecided = () => {
-      if (deferredRef.current || isIosRef.current) setVisible(true);
-    };
-    window.addEventListener('aviu-cookie-consent-resolved', onCookieDecided);
+    // iOS: show gentle tip after short delay if not installed
+    if (ios && !standalone) {
+      const t = window.setTimeout(() => setVisible(true), 4000);
+      return () => {
+        window.clearTimeout(t);
+        window.removeEventListener('beforeinstallprompt', onBip);
+      };
+    }
 
-    if (ios) armIosTip();
-
-    return () => {
-      if (iosTimer) window.clearTimeout(iosTimer);
-      window.removeEventListener('beforeinstallprompt', onBip);
-      window.removeEventListener('aviu-cookie-consent-resolved', onCookieDecided);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => window.removeEventListener('beforeinstallprompt', onBip);
   }, []);
 
   if (!visible) return null;

@@ -7,7 +7,6 @@ import { useRouter } from '@/router/Router';
 import { BackgroundCarousel } from '@/components/BackgroundCarousel';
 import { pageImages } from '@/data/pageImages';
 import { useApply } from '@/components/ApplyContext';
-import { consumePendingSearch } from '@/lib/searchQuery';
 
 export function CourseFinder() {
   const { navigate } = useRouter();
@@ -16,8 +15,7 @@ export function CourseFinder() {
   const facultyNames = ['All', ...faculties.map((f) => f.shortName)];
   const disciplines = ['All', ...Array.from(new Set(accreditedProgrammes.map((p) => p.tierDiscipline))).sort()];
 
-  // Picks up any search term the person typed into the header search bar on another page.
-  const [query, setQuery] = useState(() => consumePendingSearch());
+  const [query, setQuery] = useState('');
   const [faculty, setFaculty] = useState('All');
   const [discipline, setDiscipline] = useState('All');
 
